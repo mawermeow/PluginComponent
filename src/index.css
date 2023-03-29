@@ -1,13 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@500&family=Noto+Serif+TC:wght@400;500;700&family=Quicksand:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600;700;800;900&family=Noto+Serif+TC:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@500;700&family=Noto+Serif+TC:wght@400;500;700&family=Quicksand:wght@600&display=swap');
+
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base{
+  html{
+    @apply scroll-smooth;
+    font-family: "Noto Serif TC", sans-serif;
+  }
+  body{
+    @apply bg-white
+  }
+
+  h1{@apply text-6xl font-bold}
+  h2{@apply text-5xl font-bold}
+  h3{@apply text-4xl font-bold}
+  h4{@apply text-3xl font-bold}
+  h5{@apply text-2xl font-bold}
+  h6{@apply text-xl font-bold}
+
+  .hide-scroll::-webkit-scrollbar {
+    -webkit-appearance: none;
+    display: none;
+  }
+
+  .scroll-gray::-webkit-scrollbar{
+    width: 2px;
+  }
+  .scroll-gray::-webkit-scrollbar-thumb{
+    border-radius: 4px;
+    background-color: rgba(255, 255, 255, 0.4);
+  }
+  .scroll-gray::-webkit-scrollbar-track-piece{
+    background: transparent;
+  }
+
 }
