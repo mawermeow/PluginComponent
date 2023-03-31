@@ -12,9 +12,10 @@ const SectionE=({eventTitle})=>{
 
     return <AnimatePresence>{visible&&<motion.div
         className="absolute inset-0 flex items-center justify-end"
-        initial={{opacity:0}}
-        animate={{opacity:1}}
-        exit={{opacity:0}}
+        initial={{opacity:0,translateX:300}}
+        animate={{opacity:1,translateX:0}}
+        exit={{opacity:0,translateX:300}}
+        transition={{duration:0.5}}
     >
         <div className="relative h-[50vh] w-72 sm:right-0 top-4 w-56 bg-black/70 tracking-widest overflow-hidden pointer-events-auto shadow-[10px_10px_30px_0px_rgba(0,0,0,0.3)]">
             <div className="absolute w-full ">
