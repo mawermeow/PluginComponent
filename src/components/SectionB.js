@@ -3,6 +3,7 @@ import {proxyState} from "../App";
 import {motion, AnimatePresence} from "framer-motion";
 import {windowSizeState} from "../utils/windowSize";
 import {useEffect, useRef, useState} from "react";
+import {changeScene} from "../utils/krpano";
 
 
 const SectionB=()=>{
@@ -12,19 +13,19 @@ const SectionB=()=>{
     const contentRef= useRef()
 
     return <AnimatePresence>{visible&&<motion.div
-        className="select-none absolute inset-0 flex flex-col items-start justify-start gap-12"
+        className="select-none absolute inset-0 flex flex-col items-start justify-start gap-4 sm:gap-12"
         initial={{opacity:0}}
         animate={{opacity:1}}
         exit={{opacity:0}}
     >
-        <div className="flex relative">
-            <div className="w-[50px]">
-                <img src="./images/sectionB/btn_logo.png"/>
+        <div className="flex relative pt-4 sm:pt-0">
+            <div className="hidden sm:block w-[50px]">
+                <img className="cursor-pointer pointer-events-auto select-none" src="./images/sectionB/btn_logo.png" onClick={()=>window.location.href = "../start.html"}/>
             </div>
-            <div className="w-[172px]">
-                <img src="./images/sectionB/btn_logo2.png"/>
+            <div className="hidden sm:block w-[172px]">
+                <img className="cursor-pointer pointer-events-auto select-none" src="./images/sectionB/btn_logo2.png" onClick={()=>window.location.href = "../start.html"}/>
             </div>
-            <div className="absolute w-9 bottom-0 left-16 group pointer-events-auto cursor-pointer"
+            <div className="relative sm:absolute w-9 bottom-0 left-4 sm:left-16 group pointer-events-auto cursor-pointer"
                  onClick={()=>proxyState.ui.sectionB.isShowList = !isShowList}
             >
                 {!isShowList&&<>
@@ -41,7 +42,7 @@ const SectionB=()=>{
             className={`h-full w-64 scroll-gray overflow-hidden overflow-y-scroll pointer-events-auto`}
             initial={{translateX:0}}
             // style={{height:currentHeight-310}}
-            animate={isShowList?{translateX:0}:{translateX:-250}}
+            animate={isShowList?{translateX:0}:{translateX:-260}}
             transition={{duration:0.5,type:'spring'}}
         >
             <div className="w-60 mr-4">
@@ -87,7 +88,7 @@ const BigItem=({data})=>{
 }
 
 const ImgButton=({imgData, isSelected, onClick})=>{
-    const {img, imgHover, imgSelect, goToScene} = imgData
+    const {img, imgHover, imgSelect, goToScene, callEventText} = imgData
     const {krObjScene} = useSnapshot(proxyState.ui)
     const sceneList = imgData.sceneList?imgData.sceneList.split(','):[]
     const [isInScene,setIsInScene]=useState(false)
@@ -104,11 +105,10 @@ const ImgButton=({imgData, isSelected, onClick})=>{
     return <motion.div className="relative mb-1 w-full cursor-pointer pointer-events-auto" onClick={()=> {
         onClick(img.toString())
         if(goToScene){
-            const krpano = document.getElementById("krpanoSWFObject")
-            if(krpano){
-                const krpanoObj = krpano.get("global")
-                krpanoObj.call("loadscene(" + goToScene + ", null, MERGE, BLEND(1));")
-            }
+            changeScene(goToScene)
+        }
+        if(callEventText){
+            proxyState.ui.eventText = callEventText
         }
     }}>
         <div className="relative w-full group">

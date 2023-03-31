@@ -4,66 +4,71 @@ window.frontEnd = {
             lang: 'zh',
             showHomePage:true,
             eventText:':',
-            krObjScene:'start',
-            frontEndRecordScene:'start',
+            krObjScene:'pano182',
+            krObjLookAt:0,
+            krObjFov:80,
+            frontEndRecordScene:'pano182',
+            miniMap:{visible:false,fovX:0,fovY:0,dotWidth:0},
             sectionB:{visible:true, titleSelected:'', itemSelected:'', isShowList:true},
             sectionC:{visible:false, data:{zh:{},en:{}}},
             sectionD:{visible:false, data:{zh:{},en:{}}},
             sectionE:{visible:false, data:{zh:{},en:{}}},
+            sectionF:{visible:false, data:{zh:{},en:{}}},
+            iframe:{visible:false,data:{url:'',isFullScreen:false}},
         },
         data: {
             sectionB:[
-                {title:{img:`sidebar_B0`,imgHover:`sidebar_B0_h`,imgSelect:`sidebar_B0_h2`,goToScene:`pano13`,sceneList:`pano13,pano183,pano13`},items:[]},
+                {title:{img:`sidebar_B0`,imgHover:`sidebar_B0_h`,imgSelect:`sidebar_B0_h2`,goToScene:`pano183`,sceneList:`pano13,pano183,pano182`},items:[]},
                 {title:{img:`sidebar_B1`,imgHover:`sidebar_B1_h`,imgSelect:`sidebar_B1_h2`,},items:[
-                        {img:`sidebar_B1_1`,imgHover:`sidebar_B1_1_h`,goToScene:`pano34`,sceneList:`pano34`,imgSelect:`sidebar_B1_1_h2`,},
-                        {img:`sidebar_B1_2`,imgHover:`sidebar_B1_2_h`,goToScene:`pano17`,sceneList:`pano17`,imgSelect:`sidebar_B1_2_h2`,},
-                        {img:`sidebar_B1_3`,imgHover:`sidebar_B1_3_h`,goToScene:`pano14`,sceneList:`pano14`,imgSelect:`sidebar_B1_3_h2`,},
-                        {img:`sidebar_B1_4`,imgHover:`sidebar_B1_4_h`,goToScene:`pano15`,sceneList:`pano15`,imgSelect:`sidebar_B1_4_h2`,},
-                        {img:`sidebar_B1_5`,imgHover:`sidebar_B1_5_h`,goToScene:`pano16`,sceneList:`pano16,pano12`,imgSelect:`sidebar_B1_5_h2`,},
-                        {img:`sidebar_B1_6`,imgHover:`sidebar_B1_6_h`,goToScene:`pano44`,sceneList:`pano44,pano281`,imgSelect:`sidebar_B1_6_h2`,},
+                        {img:`sidebar_B1_1`,imgHover:`sidebar_B1_1_h`,goToScene:`pano34`,sceneList:`pano34`,imgSelect:`sidebar_B1_1_h2`,callEventText:``},
+                        {img:`sidebar_B1_2`,imgHover:`sidebar_B1_2_h`,goToScene:`pano17`,sceneList:`pano17`,imgSelect:`sidebar_B1_2_h2`,callEventText:``},
+                        {img:`sidebar_B1_3`,imgHover:`sidebar_B1_3_h`,goToScene:`pano14`,sceneList:`pano14`,imgSelect:`sidebar_B1_3_h2`,callEventText:``},
+                        {img:`sidebar_B1_4`,imgHover:`sidebar_B1_4_h`,goToScene:`pano15`,sceneList:`pano15`,imgSelect:`sidebar_B1_4_h2`,callEventText:``},
+                        {img:`sidebar_B1_5`,imgHover:`sidebar_B1_5_h`,goToScene:`pano16`,sceneList:`pano16,pano12`,imgSelect:`sidebar_B1_5_h2`,callEventText:``},
+                        {img:`sidebar_B1_6`,imgHover:`sidebar_B1_6_h`,goToScene:`pano44`,sceneList:`pano44,pano281`,imgSelect:`sidebar_B1_6_h2`,callEventText:``},
                     ]},
                 {title:{img:`sidebar_B2`,imgHover:`sidebar_B2_h`,imgSelect:`sidebar_B2_h2`,},items:[
-                        {img:`sidebar_B2_1`,imgHover:`sidebar_B2_1_h`,goToScene:`pano301`,sceneList:`pano301`,imgSelect:`sidebar_B2_1_h2`,},
-                        {img:`sidebar_B2_4`,imgHover:`sidebar_B2_4_h`,goToScene:`pano19`,sceneList:`pano19`,imgSelect:`sidebar_B2_4_h2`,},
-                        {img:`sidebar_B2_2`,imgHover:`sidebar_B2_2_h`,goToScene:`pano43`,sceneList:`pano43`,imgSelect:`sidebar_B2_2_h2`,},
+                        {img:`sidebar_B2_1`,imgHover:`sidebar_B2_1_h`,goToScene:`pano301`,sceneList:`pano301`,imgSelect:`sidebar_B2_1_h2`,callEventText:``},
+                        {img:`sidebar_B2_4`,imgHover:`sidebar_B2_4_h`,goToScene:`pano19`,sceneList:`pano19`,imgSelect:`sidebar_B2_4_h2`,callEventText:``},
+                        {img:`sidebar_B2_2`,imgHover:`sidebar_B2_2_h`,goToScene:`pano43`,sceneList:`pano43`,imgSelect:`sidebar_B2_2_h2`,callEventText:``},
                     ]},
                 {title:{img:`sidebar_B3`,imgHover:`sidebar_B3_h`,imgSelect:`sidebar_B3_h2`,},items:[
-                        {img:`sidebar_B3_1`,imgHover:`sidebar_B3_1_h`,goToScene:`pano113`,sceneList:`pano113`,imgSelect:`sidebar_B3_1_h2`,},
-                        {img:`sidebar_B3_2`,imgHover:`sidebar_B3_2_h`,goToScene:`pano130`,sceneList:`pano130`,imgSelect:`sidebar_B3_2_h2`,},
-                        {img:`sidebar_B3_3`,imgHover:`sidebar_B3_3_h`,goToScene:`pano132`,sceneList:`pano132`,imgSelect:`sidebar_B3_3_h2`,},
-                        {img:`sidebar_B3_4`,imgHover:`sidebar_B3_4_h`,goToScene:`pano131`,sceneList:`pano131`,imgSelect:`sidebar_B3_4_h2`,},
+                        {img:`sidebar_B3_1`,imgHover:`sidebar_B3_1_h`,goToScene:`pano113`,sceneList:`pano113`,imgSelect:`sidebar_B3_1_h2`,callEventText:``},
+                        {img:`sidebar_B3_2`,imgHover:`sidebar_B3_2_h`,goToScene:`pano130`,sceneList:`pano130`,imgSelect:`sidebar_B3_2_h2`,callEventText:``},
+                        {img:`sidebar_B3_3`,imgHover:`sidebar_B3_3_h`,goToScene:`pano131`,sceneList:`pano131`,imgSelect:`sidebar_B3_3_h2`,callEventText:``},
+                        {img:`sidebar_B3_4`,imgHover:`sidebar_B3_4_h`,goToScene:`pano132`,sceneList:`pano132`,imgSelect:`sidebar_B3_4_h2`,callEventText:``},
                     ]},
                 {title:{img:`sidebar_B4`,imgHover:`sidebar_B4_h`,imgSelect:`sidebar_B4_h2`,},items:[
-                        {img:`sidebar_B4_1`,imgHover:`sidebar_B4_1_h`,goToScene:`pano45`,sceneList:`pano45`,imgSelect:`sidebar_B4_1_h2`,},
-                        {img:`sidebar_B4_4`,imgHover:`sidebar_B4_4_h`,goToScene:`pano193`,sceneList:`pano193,pano192`,imgSelect:`sidebar_B4_4_h2`,},
-                        {img:`sidebar_B4_2`,imgHover:`sidebar_B4_2_h`,goToScene:`pano187`,sceneList:`pano187,pano189,pano188`,imgSelect:`sidebar_B4_2_h2`,},
-                        {img:`sidebar_B4_3`,imgHover:`sidebar_B4_3_h`,goToScene:`pano191`,sceneList:`pano191,pano190
-`,imgSelect:`sidebar_B4_3_h2`,},
-                        {img:`sidebar_B4_5`,imgHover:`sidebar_B4_5_h`,goToScene:`A02_p2`,sceneList:`A02_p2,pano4904`,imgSelect:`sidebar_B4_5_h2`,},
+                        {img:`sidebar_B4_1`,imgHover:`sidebar_B4_1_h`,goToScene:`pano45`,sceneList:`pano45`,imgSelect:`sidebar_B4_1_h2`,callEventText:``},
+                        {img:`sidebar_B4_4`,imgHover:`sidebar_B4_4_h`,goToScene:`pano193`,sceneList:`pano193,pano192`,imgSelect:`sidebar_B4_4_h2`,callEventText:``},
+                        {img:`sidebar_B4_2`,imgHover:`sidebar_B4_2_h`,goToScene:`pano188`,sceneList:`pano187,pano189,pano188`,imgSelect:`sidebar_B4_2_h2`,callEventText:``},
+                        {img:`sidebar_B4_3`,imgHover:`sidebar_B4_3_h`,goToScene:`pano191`,sceneList:`pano191,pano190`,imgSelect:`sidebar_B4_3_h2`,callEventText:``},
+                        {img:`sidebar_B4_5`,imgHover:`sidebar_B4_5_h`,goToScene:`pano11`,sceneList:`pano11,pano4904`,imgSelect:`sidebar_B4_5_h2`,callEventText:``},
                     ]},
                 {title:{img:`sidebar_B5`,imgHover:`sidebar_B5_h`,imgSelect:`sidebar_B5_h2`,},items:[
-                        {img:`sidebar_B5_1`,imgHover:`sidebar_B5_1_h`,goToScene:`pano194`,sceneList:`pano199,pano194,pano651`,imgSelect:`sidebar_B5_1_h2`,},
-                        {img:`sidebar_B5_2`,imgHover:`sidebar_B5_2_h`,goToScene:`pano200`,sceneList:`pano200`,imgSelect:`sidebar_B5_2_h2`,},
-                        {img:`sidebar_B5_4`,imgHover:`sidebar_B5_4_h`,goToScene:`pano650`,sceneList:`pano650`,imgSelect:`sidebar_B5_4_h2`,},
+                        {img:`sidebar_B5_1`,imgHover:`sidebar_B5_1_h`,goToScene:`pano194`,sceneList:`pano199,pano194,pano651`,imgSelect:`sidebar_B5_1_h2`,callEventText:``},
+                        {img:`sidebar_B5_2`,imgHover:`sidebar_B5_2_h`,goToScene:`pano200`,sceneList:`pano200`,imgSelect:`sidebar_B5_2_h2`,callEventText:``},
+                        {img:`sidebar_B5_4`,imgHover:`sidebar_B5_4_h`,goToScene:`pano650`,sceneList:`pano650`,imgSelect:`sidebar_B5_4_h2`,callEventText:``},
                     ]},
                 {title:{img:`sidebar_B6`,imgHover:`sidebar_B6_h`,imgSelect:`sidebar_B6_h2`,},items:[
-                        {img:`sidebar_B6_1`,imgHover:`sidebar_B6_1_h`,goToScene:``,sceneList:``,imgSelect:`sidebar_B6_1_h2`,},
-                        {img:`sidebar_B6_4`,imgHover:`sidebar_B6_4_h`,goToScene:``,sceneList:``,imgSelect:`sidebar_B6_4_h2`,},
-                        {img:`sidebar_B6_2`,imgHover:`sidebar_B6_2_h`,goToScene:``,sceneList:``,imgSelect:`sidebar_B6_2_h2`,},
-                        {img:`sidebar_B6_3`,imgHover:`sidebar_B6_3_h`,goToScene:``,sceneList:``,imgSelect:`sidebar_B6_3_h2`,},
+                        {img:`sidebar_B6_1`,imgHover:`sidebar_B6_1_h`,goToScene:`pano140`,sceneList:`pano140`,imgSelect:`sidebar_B6_1_h2`,callEventText:``},
+                        {img:`sidebar_B6_4`,imgHover:`sidebar_B6_4_h`,goToScene:`pano197`,sceneList:`pano197`,imgSelect:`sidebar_B6_4_h2`,callEventText:``},
+                        {img:`sidebar_B6_2`,imgHover:`sidebar_B6_2_h`,goToScene:`pano198`,sceneList:`pano198`,imgSelect:`sidebar_B6_2_h2`,callEventText:``},
+                        {img:`sidebar_B6_3`,imgHover:`sidebar_B6_3_h`,goToScene:`pano142`,sceneList:`pano142,pano141`,imgSelect:`sidebar_B6_3_h2`,callEventText:``},
                     ]},
                 {title:{img:`sidebar_B7`,imgHover:`sidebar_B7_h`,imgSelect:`sidebar_B7_h2`,},items:[
-                        {img:`sidebar_B7_1`,imgHover:`sidebar_B7_1_h`,goToScene:`pano10`,sceneList:`pano10`,imgSelect:`sidebar_B7_1_h2`,},
-                        {img:`sidebar_B7_4`,imgHover:`sidebar_B7_4_h`,goToScene:`pano133`,sceneList:`pano133,pano136,pano135,pano134`,imgSelect:`sidebar_B7_4_h2`,},
-                        {img:`sidebar_B7_2`,imgHover:`sidebar_B7_2_h`,goToScene:`pano277`,sceneList:`pano277,pano137`,imgSelect:`sidebar_B7_2_h2`,},
-                        {img:`sidebar_B7_6`,imgHover:`sidebar_B7_6_h`,goToScene:`pano4461`,sceneList:`pano265,pano4461`,imgSelect:`sidebar_B7_6_h2`,},
+                        {img:`sidebar_B7_1`,imgHover:`sidebar_B7_1_h`,goToScene:`pano10`,sceneList:`pano10`,imgSelect:`sidebar_B7_1_h2`,callEventText:``},
+                        {img:`sidebar_B7_4`,imgHover:`sidebar_B7_4_h`,goToScene:`pano133`,sceneList:`pano133,pano134`,imgSelect:`sidebar_B7_4_h2`,callEventText:``},
+                        {img:`sidebar_B7_2`,imgHover:`sidebar_B7_2_h`,goToScene:`pano277`,sceneList:`pano277,pano137`,imgSelect:`sidebar_B7_2_h2`,callEventText:``},
+                        {img:`sidebar_B7_3`,imgHover:`sidebar_B7_3_h`,goToScene:`pano136`,sceneList:`pano136,pano135`,imgSelect:`sidebar_B7_3_h2`,callEventText:``},
+                        {img:`sidebar_B7_6`,imgHover:`sidebar_B7_6_h`,goToScene:`pano4461`,sceneList:`pano265,pano4461`,imgSelect:`sidebar_B7_6_h2`,callEventText:``},
                     ]},
                 {title:{img:`sidebar_B8`,imgHover:`sidebar_B8_h`,imgSelect:`sidebar_B8_h2`,},items:[
-                        {img:`sidebar_B8_1`,imgHover:`sidebar_B8_1_h`,goToScene:`pano139`,sceneList:`pano139`,imgSelect:`sidebar_B8_1_h2`,},
-                        {img:`sidebar_B8_2`,imgHover:`sidebar_B8_2_h`,goToScene:`pano138`,sceneList:`pano138`,imgSelect:`sidebar_B8_2_h2`,},
-                        {img:`sidebar_B8_3`,imgHover:`sidebar_B8_3_h`,goToScene:`pano196`,sceneList:`pano196,pano195`,imgSelect:`sidebar_B8_3_h2`,},
-                        {img:`sidebar_B8_4`,imgHover:`sidebar_B8_4_h`,goToScene:`pano186`,sceneList:`pano186`,imgSelect:`sidebar_B8_4_h2`,},
-                        {img:`sidebar_B8_5`,imgHover:`sidebar_B8_5_h`,goToScene:`pano185`,sceneList:`pano185,pano184,pano649`,imgSelect:`sidebar_B8_5_h2`,},
+                        {img:`sidebar_B8_1`,imgHover:`sidebar_B8_1_h`,goToScene:`pano139`,sceneList:`pano139`,imgSelect:`sidebar_B8_1_h2`,callEventText:``},
+                        {img:`sidebar_B8_2`,imgHover:`sidebar_B8_2_h`,goToScene:`pano138`,sceneList:`pano138`,imgSelect:`sidebar_B8_2_h2`,callEventText:``},
+                        {img:`sidebar_B8_3`,imgHover:`sidebar_B8_3_h`,goToScene:`pano196`,sceneList:`pano196,pano195`,imgSelect:`sidebar_B8_3_h2`,callEventText:``},
+                        {img:`sidebar_B8_4`,imgHover:`sidebar_B8_4_h`,goToScene:`pano186`,sceneList:`pano186`,imgSelect:`sidebar_B8_4_h2`,callEventText:``},
+                        {img:`sidebar_B8_5`,imgHover:`sidebar_B8_5_h`,goToScene:`pano185`,sceneList:`pano185,pano184`,imgSelect:`sidebar_B8_5_h2`,callEventText:``},
                     ]},
             ], // title, items, (img, imgHover, imgSelect, goToScene, sceneList)
             sectionC:{
@@ -75,8 +80,7 @@ window.frontEnd = {
 `,img:``,content:`The art of the feast takes center stage in this section. See a display of items once used in the grand Manchu-Han imperial banquet from NPM’s collection; nostalgic items and memorabilia from the matron of Taiwanese food restaurants - Kang San Lau - from NMTH’s collection; and a presentation of indigenous dining ware from the Pan family of Lahodobool of central Taiwan and Paiwan noble families, and carved wooden fish plates used by the Yami (Tao) of Orchid Island (Lanyu) from NTM’s collection. Where would you like to eat tonight?`,bigContent:``,}},
                 infoC_04:{zh:{title:`煙具大驚奇`,subtitle:`主題介紹`,img:``,content:`吸煙有礙健康，但吸煙也會讓人上癮，除了尼古丁的化學效果外，煙具的造型美感有時也讓人愛不釋手。故宮巧奪天工的鼻煙壺；臺博創意造型之原住民族煙斗；臺史博大器身分象徵的漢人煙管。精美的煙具令人不吸煙也上癮。`,bigContent:``,},en:{title:`Spectacle of Smoking Appliances`,subtitle:`Theme Introduction
 `,img:``,content:`Although bad for health, smoking tobacco is doubtlessly addictive. Beyond the chemical effects of nicotine, the artfully fashioned accoutrements of smoking have certainly added to the difficulties of ‘kicking the habit.’ Items in this section range from exquisitely crafted snuff bottles from NPM’s collection to ingeniously crafted indigenous tobacco pipes from NTM’s collection and elegant, status-enhancing smoking pipes used by Han Taiwanese from NMTH’s collection. Even though you don’t smoke, the elegantly crafted smoking items in this section are downright addictive!`,bigContent:``,}},
-                infoC_05:{zh:{title:`把酒言歡`,subtitle:`主題介紹`,img:``,content:`酒有許多的功能與用途，宴請、祭祀、慶功、結盟、壽慶、婚宴等等，甚至還用酒作藥劑治病。所以人類喝酒「儀式感」很重要。喝酒可以這麼講究的話，盛酒的容器自然重要且造型及功能多樣。此單元展示原、民、官三種角度的酒器，透過各式各樣酒器的並
-呈，展示不同的物質文化與喝酒觀念。但是記得混酒容易醉喔！也提醒開車不喝酒，喝酒不開車！
+                infoC_05:{zh:{title:`把酒言歡`,subtitle:`主題介紹`,img:``,content:`酒有許多的功能與用途，宴請、祭祀、慶功、結盟、壽慶、婚宴等等，甚至還用酒作藥劑治病。所以人類喝酒「儀式感」很重要。喝酒可以這麼講究的話，盛酒的容器自然重要且造型及功能多樣。此單元展示原、民、官三種角度的酒器，透過各式各樣酒器的並呈，展示不同的物質文化與喝酒觀念。但是記得混酒容易醉喔！也提醒開車不喝酒，喝酒不開車！
 `,bigContent:``,},en:{title:`Drink and Have a Good Time`,subtitle:`Theme Introduction
 `,img:``,content:`Liquor/wine has many functions and uses, including banquets, rituals, celebrations, alliances, birthday celebrations, wedding banquets. It is even used as a medicine. That is why it is important for human beings to have a sense of ritual in drinking. Because drinking has so much significance, the containers used to serve liquor/wine are naturally important and are characterized by their variety of different shapes and functions. This section presents traditional drinking vessels used by indigenous peoples, Han civilians, and government officials in the hope that juxtaposing them in this way, the viewer will be able to understand the different material cultures and attitudes towards drinking. As a reminder, it is easy to get drunk if you mix different types of alcohol and please, don't drink and drive.`,bigContent:``,}},
                 infoC_06:{zh:{title:`我會更美麗`,subtitle:`主題介紹`,img:``,content:`時尚、美體、妝容、與寶石飾品！這裡不是百貨公司的週年慶特賣，而是三間博物館秘藏的原住民族、漢人民間、與故宮皇家女子時髦風尚專櫃。這裡有清皇家時尚的紅、藍、綠寶石；原住民族繁複耀目的複串琉璃珠項鍊；漢家翠玉金蝴蝶步搖。`,bigContent:``,},en:{title:`Making Myself More Beautiful`,subtitle:`Theme Introduction
@@ -89,59 +93,59 @@ window.frontEnd = {
 `,img:``,content:`Gifts sometimes deliver not only well wishes, and also serve as manipulation and operation of social relations. In the history of bureaucracy, gifts on specific occasions or from particular someone further played as the demonstration of political performance. Chinese empires often took the means of bestowing ‘Imperial gifts’ to foreigners or border tribes, and granting titles to declare the superiority of Chinese culture and to form co-optation. Those direct or indirect receivers of the imperial gifts then used the ‘yuzhi (Imperial bestowed)’ as a tool to elevate social status, transforming the reward into a significant manifesto of power. This section showcases granted items collected by each museum, telling the politics of gifts in history.`,bigContent:``,}},
             }, // title, subtitle, img, content, bigContent
             sectionD:{
-infoD_01:{zh:{title:`看不懂的文字`,subtitle:`古文與外文`,img:`宮廷裡的餐具`,content:`古老的篆書其扭曲的書寫結構與筆畫，讓一般人難以辨認，它們早期是被寫在甲骨、碑刻、銅器上的文字。後代人也書寫這種古老文字，用以發思古之幽情。此外，也使用於印章，如清代皇室的璽印，可看到除了篆體外也使用滿文。對現代的我們來說，古文就如同外文，但它卻是當時通用的官方文字。不僅如此，篆書也轉化成吉祥的裝飾紋樣，用於書法與器物的裝飾。`},en:{title:`A Cryptic Written Language`,subtitle:`Ancient Script and Foreign Language`,img:`宮廷裡的餐具`,content:`The twisting composition and twirling brush strokes of the ancient seal script make the characters difficult to recognize by regular people. The seal script had appeared on the inscriptions of early oracles, monuments, and bronze wares; it was adopted by following generations to express nostalgic sentiments. Furthermore, the seals, such as the Imperial seals of the Qing dynasty had also applied seal script and Manchu language. For us now, the ancient letter is just another foreign language, however, it served the official use back in the times. Moreover, the seal script has transformed into an auspicious decoration used for adorning calligraphy and antiquities.`}},
-infoD_02:{zh:{title:`看不懂的文字`,subtitle:`那一年，被人們遺忘的原住民文字：新港文書`,img:``,content:`17世紀荷蘭駐臺傳教士為了傳教與推行政務，以羅馬拼音教導當地平埔族人拼寫自己的語言，成為臺灣最早有文字紀錄的語言，也因此而產生以羅馬拼音書寫的平埔族語契約文書，後世遂以最早使用的臺南新港社為名而稱之為「新港文書」。新港文書有單語和雙語的呈現方式：單語的使用，常見於同族社之內的往來；雙語的使用，則多數來自於和漢族之間的訂約關係，包含土地給墾、典租、買賣等事務，涉及金錢交易，以保障族人的權益。新港文字一直使用到19世紀上半，大約在1830年左右才完全消失。`},en:{title:`A Cryptic Written Language`,subtitle:`Taiwan’s Lost Indigenous Script: Sinkang Manuscripts`,img:``,content:`In the 17th century, Dutch missionaries taught a romanized version of the local vernacular language spoken by indigenous communities in and around modern-day Tainan City. This marks the first time that a language of Taiwan was set down in writing. This written language came to be used in legal documents among local Pingpu tribal communities. Only long after it had fallen out of use was this language given its present name - Sinkang, named for the area of Tainan in which it was once most widely used. Surviving examples of Sinkang texts include both unilingual and bilingual documents. Unilingual (Sinkang) documents were used in agreements made among the Pingpu communities, while bilingual (Sinkang & Chinese) documents were most commonly used in agreements made between the Pingpu and Han Chinese. The latter, including land-lease, land-pawn, and sales agreements, helped to ensure and protect the rights of the indigenous parties. Sinkang was in use for around two centuries and is thought to have died out around 1830.`}},
-infoD_03:{zh:{title:`看不懂的文字`,subtitle:`與神明溝通的文字`,img:``,content:`在漢人民間信仰裡，諮詢神明是件重要的事。人們無法直接與神明溝通，所以會透過儀式專家協助，像是讓神明降駕身上的乩童(tâng-ki)、擔任翻譯者的桌頭(toh-thâu)，或熟稔科儀流程的法師等。這些物件上寫著一般人看不懂的文字，就是儀式專家所掌握的特殊知識。儀式專家利用這些知識，既幫助人們與神明溝通、解決問題，也讓自己扮演「中介者」的重要角色，在傳統地方社會中掌握人脈與資源。`},en:{title:`A Cryptic Written Language`,subtitle:`Text Used to Communicate with Deities`,img:``,content:`Consulting with deities is a matter of utmost importance in Han Chinese folk religion. Nonetheless, people cannot directly communicate with the deities and need the assistance of ritual specialists, such as tâng-ki—who allow their bodies to be possessed by deities; toh-thâu—who stand next to the altar and help interpret the divine messages; and Buddhist priests who are well-versed in the dos and don'ts of rituals. The average person is unable to understand the text written on these artifacts. This knowledge is exclusive to ritual specialists. Ritual specialists leverage their expertise to help people get in touch with the deities and solve their problems. In return, they have access to a broad network of contacts and resources in traditional areas thanks to their key role as intermediaries.`}},
-infoD_04:{zh:{title:`看不懂的文字`,subtitle:`三板橋張家的地理師文獻`,img:``,content:`臺史博典藏一批墨筆書寫的手稿文獻，原為19世紀晚期三板橋(位於今新北市三芝區)張家所擁有，內容涵蓋儀禮、咒語、風水堪輿、傳統漢醫等各種主題，展現出傳統漢人地方社會中儀式專家所需要掌握的知識與技能。`},en:{title:`A Cryptic Written Language`,subtitle:`Chinese geomancy documents from the Chang family in Sam-pang-kiô`,img:``,content:`There is a set of manuscripts written with ink brush in NMTH's collection, which was in the possession of the Chang Family from Sam-pang-kiô (located in present-day Sanzhi District, New Taipei City) during the late 19th century. Its contents include a variety of topics including ceremonies, mantras, Chinese geomancy (feng shui), and traditional Chinese medicine. It exemplifies the essential knowledge and skills of ritual specialists in traditional Han Chinese local societies.`}},
-infoD_05:{zh:{title:`看不懂的文字`,subtitle:`當代主題休憩桌`,img:``,content:``},en:{title:`A Cryptic Written Language`,subtitle:``,img:``,content:``}},
-infoD_06:{zh:{title:`餐桌的記憶`,subtitle:`宮裡的餐具`,img:``,content:`清宮宴，與宴王公每人一桌。菜品多達數十道，先享用北方麵食餑餑，驢打滾、饅頭及果品；之後才品嘗各民族或不同菜系的酒肉佳餚。宮宴菜色多，一餐下來每人的餐具多達數十個，其中又以奶茶及帝后的餐具最具特色，常用金銀、玉石，或表達尊貴身分的黃釉瓷器。當然，為應景也特別設計帶有吉祥意涵的器皿。宮宴規矩在清乾隆之後才在民間酒樓鋪張成大家熟知的「滿漢全席」。`},en:{title:`Mealtime Memories`,subtitle:`Tableware in the Imperial Court`,img:``,content:`At the banquet of the Qing court, each noble had one table. The complete course came in dozen dishes; the feast began with the Northern “bobo” pastry, “ludagun” sweet, steamed bun, and fruits; then followed by delicacies from different tribes and culinary legacies. The numerous dishes suggest that dozens of tablewares were served to each person. Among all, the most characteristic utensils were the milk tea bowls and the tablewares of the Emperor and Empress that often comes in gold, silver, jade, or yellow-glazed porcelain that states the royal prestige. These tablewares had also adorned with auspicious ornaments to suit the occasion. The regular banquet of the Qing court was then later exaggerated by private restaurants into the “Man-han banquet” after the Qianlong reign of the Qing dynasty.`}},
-infoD_07:{zh:{title:`餐桌的記憶`,subtitle:`臺灣原住民族食具大解密`,img:``,content:`臺灣原住民族的食具中，以造型多樣的木盤與木匙/杓最具特色。排灣族貴族使用的木匙，柄部多刻以各種人像造型，造型豐富多樣，既彰顯使用者的身分，也展現雕刻者的藝術創意。另外雅美族(達悟族)、凱達格蘭族、巴宰族、噶瑪蘭族等的各種形制木盤，不只造型多樣，同時食物與特定食具的配合，也反映出社會人群之分類。`},en:{title:`Mealtime Memories`,subtitle:`The Secret of Indigenous Tableware`,img:``,content:`A wide variety of wooden plates and spoons / spatulas comprised the bulk of indigenous tableware. The handles of spoons used by Paiwan nobility were decorated with artful carvings of various personages, which attested both to the user’s status and to the artist’s creativity. Wooden plates used by Yami (Tao), Ketagalan, Pazeh and Kavalan reflect delightful diversity while suggesting their specialized purpose and reflecting the social status of their users.`}},
-infoD_08:{zh:{title:`餐桌的記憶`,subtitle:`味覺的殿堂`,img:``,content:`1917年成立於大稻埕的「江山樓」，是20世紀前期臺北知名飲宴場所，也是近代高檔「臺灣菜」餐廳的代表案例之一。可惜的是，它在戰後結束營業，大樓也已拆除，現今無法目睹它的往日風華。不過，從臺史博典藏的江山樓餐具，仍可感受當時的餐飲物質文化；而從廣告、菜單、收據等文件，也能一窺百年前的「臺灣菜」的大致樣貌。`},en:{title:`Mealtime Memories`,subtitle:`The Bastion of Flavors`,img:``,content:`Kang-san-lâu was built in Dadaocheng in 1917 and was Taipei's most renowned banquet hall in the early 20th century. It was also an example of Taiwanese haute cuisine in recent times. Unfortunately, it went out of business after World War II and the building was demolished, so we are now unable to set our eyes on its past glory. Nevertheless, tableware from Kang-san-lâu is preserved in the collection of NMTH, so we can still experience the material culture of dining in those days. We can also get a glimpse of Taiwanese cuisine from a century ago through advertisements, menus, receipts, and other documents.`}},
-infoD_09:{zh:{title:`餐桌的記憶`,subtitle:`當代主題休憩桌`,img:``,content:``},en:{title:`Mealtime Memories`,subtitle:``,img:``,content:``}},
-infoD_10:{zh:{title:`餐桌的記憶`,subtitle:`江山樓主題休憩桌`,img:``,content:``},en:{title:`Mealtime Memories`,subtitle:``,img:``,content:``}},
-infoD_11:{zh:{title:`煙具大驚奇`,subtitle:`似煙非煙是鼻煙`,img:``,content:`鼻煙是由菸葉磨成細粉，加入香料發酵而成，不須點火燃燒有通嚏輕揚之效，清代為盛裝此種輕細粉末，因而發展出小口、廣腹、帶匙蓋的鼻煙壺。鼻煙壺成為當時工藝的縮影，各種材質與技法皆可用於此種小瓶中。人與人見面時先遞鼻煙壺，不僅欣賞精巧的小壺外，更品嘗鼻煙的淡淡幽香，社交活動由此展開。`},en:{title:`Spectacle of Smoking Appliances`,subtitle:`Snuff Powder of Tobacco`,img:``,content:`The snuff is made from fermented tobacco powder blended with aromatic scents. The intake of snuff powder is through nose-inhaling without being lit by fire and to serve the purpose of clearing the airway and lifting spirits. The snuff travelled from Europe into China in the 17th c. and became a trend exclusive to the royal nobles and aristocrats of the era. The snuff bottle had developed the exquisite characteristic of small opening, wide belly, and a lid connected with a spoon to hold this fine powder.`}},
-infoD_12:{zh:{title:`煙具大驚奇`,subtitle:`讓你忍不住不吸上一口`,img:``,content:`臺灣原住民族群吸煙草的習慣可能早在十六、七世紀大航海時代煙草傳入臺灣後即開始。早期許多原住民族群會於住家或耕地附近種植煙草，自產自用，吸煙習慣不限男女，也幾乎各族皆有。煙斗是吸食煙草的主要器具，基本上有兩種抽法：一是以小刀切碎煙草葉後，放入煙碗中點燃吸食；二則是將煙草捲成條狀後，塞入煙碗點燃吸食。一支煙斗可分為(煙)斗部和煙管兩部分，各族群之煙斗造型變化多樣，或雕刻塑型、或飾以金屬銅釘、或切竹節天成，各富特色，再配上特殊的煙草盒(袋)，展現臺灣原住民族群造型上的創意與美學，讓人忍不住都想吸上一口。`},en:{title:`Spectacle of Smoking Appliances`,subtitle:`Craving a Toke`,img:``,content:`Taiwan indigenous people most likely picked up their smoking habit from foreign traders and colonizers during the 16th and 17th centuries. In the early days, many grew tobacco plants around homes and fields to meet their own needs. Ultimately, both men and women in most tribes were hooked on the pleasures of tobacco. Most indigenous people drew puffs of tobacco smoke from pipe bowls filled with tobacco leaves that had either been finely chopped or rolled into flute-shaped bundles. Although indigenous smoking pipes used a simple bowl-and-tube design, village artisans helped turn them into works of art with carvings and decorative embellishments. Together with hand woven and crafted tobacco leaf holders and pouches, these pipes are an important expression of indigenous innovation and aesthetic taste.`}},
-infoD_13:{zh:{title:`煙具大驚奇`,subtitle:`癮君子嚴選煙桿／具 `,img:``,content:`最晚在17世紀，煙草就隨著漢人與歐洲人腳步跨海來到臺灣，開啟了臺灣人與尼古丁交會數百年的吞雲吐霧史。在漢人傳統社會裡，吸煙不只解癮頭，更代表某種文化意義，使得煙具已不只是煙具，有的就地取材，有的卻是精雕細繡。這些煙具的多元造型，反映了早期漢人抽煙的方法，以及如何藉其反映自身的社會地位。`},en:{title:`Spectacle of Smoking Appliances`,subtitle:`Select Smoking Accessories for Junkies`,img:``,content:`Tobacco was first brought to Taiwan by Han Chinese and European voyagers in the 17th century at the latest. This began the centuries-long smoky era of Taiwan's coexistence with nicotine.
+                infoD_01:{zh:{title:`看不懂的文字`,subtitle:`古文與外文`,img:`宮廷裡的餐具`,content:`古老的篆書其扭曲的書寫結構與筆畫，讓一般人難以辨認，它們早期是被寫在甲骨、碑刻、銅器上的文字。後代人也書寫這種古老文字，用以發思古之幽情。此外，也使用於印章，如清代皇室的璽印，可看到除了篆體外也使用滿文。對現代的我們來說，古文就如同外文，但它卻是當時通用的官方文字。不僅如此，篆書也轉化成吉祥的裝飾紋樣，用於書法與器物的裝飾。`},en:{title:`A Cryptic Written Language`,subtitle:`Ancient Script and Foreign Language`,img:`宮廷裡的餐具`,content:`The twisting composition and twirling brush strokes of the ancient seal script make the characters difficult to recognize by regular people. The seal script had appeared on the inscriptions of early oracles, monuments, and bronze wares; it was adopted by following generations to express nostalgic sentiments. Furthermore, the seals, such as the Imperial seals of the Qing dynasty had also applied seal script and Manchu language. For us now, the ancient letter is just another foreign language, however, it served the official use back in the times. Moreover, the seal script has transformed into an auspicious decoration used for adorning calligraphy and antiquities.`}},
+                infoD_02:{zh:{title:`看不懂的文字`,subtitle:`那一年，被人們遺忘的原住民文字：新港文書`,img:``,content:`17世紀荷蘭駐臺傳教士為了傳教與推行政務，以羅馬拼音教導當地平埔族人拼寫自己的語言，成為臺灣最早有文字紀錄的語言，也因此而產生以羅馬拼音書寫的平埔族語契約文書，後世遂以最早使用的臺南新港社為名而稱之為「新港文書」。新港文書有單語和雙語的呈現方式：單語的使用，常見於同族社之內的往來；雙語的使用，則多數來自於和漢族之間的訂約關係，包含土地給墾、典租、買賣等事務，涉及金錢交易，以保障族人的權益。新港文字一直使用到19世紀上半，大約在1830年左右才完全消失。`},en:{title:`A Cryptic Written Language`,subtitle:`Taiwan’s Lost Indigenous Script: Sinkang Manuscripts`,img:``,content:`In the 17th century, Dutch missionaries taught a romanized version of the local vernacular language spoken by indigenous communities in and around modern-day Tainan City. This marks the first time that a language of Taiwan was set down in writing. This written language came to be used in legal documents among local Pingpu tribal communities. Only long after it had fallen out of use was this language given its present name - Sinkang, named for the area of Tainan in which it was once most widely used. Surviving examples of Sinkang texts include both unilingual and bilingual documents. Unilingual (Sinkang) documents were used in agreements made among the Pingpu communities, while bilingual (Sinkang & Chinese) documents were most commonly used in agreements made between the Pingpu and Han Chinese. The latter, including land-lease, land-pawn, and sales agreements, helped to ensure and protect the rights of the indigenous parties. Sinkang was in use for around two centuries and is thought to have died out around 1830.`}},
+                infoD_03:{zh:{title:`看不懂的文字`,subtitle:`與神明溝通的文字`,img:``,content:`在漢人民間信仰裡，諮詢神明是件重要的事。人們無法直接與神明溝通，所以會透過儀式專家協助，像是讓神明降駕身上的乩童(tâng-ki)、擔任翻譯者的桌頭(toh-thâu)，或熟稔科儀流程的法師等。這些物件上寫著一般人看不懂的文字，就是儀式專家所掌握的特殊知識。儀式專家利用這些知識，既幫助人們與神明溝通、解決問題，也讓自己扮演「中介者」的重要角色，在傳統地方社會中掌握人脈與資源。`},en:{title:`A Cryptic Written Language`,subtitle:`Text Used to Communicate with Deities`,img:``,content:`Consulting with deities is a matter of utmost importance in Han Chinese folk religion. Nonetheless, people cannot directly communicate with the deities and need the assistance of ritual specialists, such as tâng-ki—who allow their bodies to be possessed by deities; toh-thâu—who stand next to the altar and help interpret the divine messages; and Buddhist priests who are well-versed in the dos and don'ts of rituals. The average person is unable to understand the text written on these artifacts. This knowledge is exclusive to ritual specialists. Ritual specialists leverage their expertise to help people get in touch with the deities and solve their problems. In return, they have access to a broad network of contacts and resources in traditional areas thanks to their key role as intermediaries.`}},
+                infoD_04:{zh:{title:`看不懂的文字`,subtitle:`三板橋張家的地理師文獻`,img:``,content:`臺史博典藏一批墨筆書寫的手稿文獻，原為19世紀晚期三板橋(位於今新北市三芝區)張家所擁有，內容涵蓋儀禮、咒語、風水堪輿、傳統漢醫等各種主題，展現出傳統漢人地方社會中儀式專家所需要掌握的知識與技能。`},en:{title:`A Cryptic Written Language`,subtitle:`Chinese geomancy documents from the Chang family in Sam-pang-kiô`,img:``,content:`There is a set of manuscripts written with ink brush in NMTH's collection, which was in the possession of the Chang Family from Sam-pang-kiô (located in present-day Sanzhi District, New Taipei City) during the late 19th century. Its contents include a variety of topics including ceremonies, mantras, Chinese geomancy (feng shui), and traditional Chinese medicine. It exemplifies the essential knowledge and skills of ritual specialists in traditional Han Chinese local societies.`}},
+                infoD_05:{zh:{title:`看不懂的文字`,subtitle:`當代主題休憩桌`,img:``,content:``},en:{title:`A Cryptic Written Language`,subtitle:``,img:``,content:``}},
+                infoD_06:{zh:{title:`餐桌的記憶`,subtitle:`宮裡的餐具`,img:``,content:`清宮宴，與宴王公每人一桌。菜品多達數十道，先享用北方麵食餑餑，驢打滾、饅頭及果品；之後才品嘗各民族或不同菜系的酒肉佳餚。宮宴菜色多，一餐下來每人的餐具多達數十個，其中又以奶茶及帝后的餐具最具特色，常用金銀、玉石，或表達尊貴身分的黃釉瓷器。當然，為應景也特別設計帶有吉祥意涵的器皿。宮宴規矩在清乾隆之後才在民間酒樓鋪張成大家熟知的「滿漢全席」。`},en:{title:`Mealtime Memories`,subtitle:`Tableware in the Imperial Court`,img:``,content:`At the banquet of the Qing court, each noble had one table. The complete course came in dozen dishes; the feast began with the Northern “bobo” pastry, “ludagun” sweet, steamed bun, and fruits; then followed by delicacies from different tribes and culinary legacies. The numerous dishes suggest that dozens of tablewares were served to each person. Among all, the most characteristic utensils were the milk tea bowls and the tablewares of the Emperor and Empress that often comes in gold, silver, jade, or yellow-glazed porcelain that states the royal prestige. These tablewares had also adorned with auspicious ornaments to suit the occasion. The regular banquet of the Qing court was then later exaggerated by private restaurants into the “Man-han banquet” after the Qianlong reign of the Qing dynasty.`}},
+                infoD_07:{zh:{title:`餐桌的記憶`,subtitle:`臺灣原住民族食具大解密`,img:``,content:`臺灣原住民族的食具中，以造型多樣的木盤與木匙/杓最具特色。排灣族貴族使用的木匙，柄部多刻以各種人像造型，造型豐富多樣，既彰顯使用者的身分，也展現雕刻者的藝術創意。另外雅美族(達悟族)、凱達格蘭族、巴宰族、噶瑪蘭族等的各種形制木盤，不只造型多樣，同時食物與特定食具的配合，也反映出社會人群之分類。`},en:{title:`Mealtime Memories`,subtitle:`The Secret of Indigenous Tableware`,img:``,content:`A wide variety of wooden plates and spoons / spatulas comprised the bulk of indigenous tableware. The handles of spoons used by Paiwan nobility were decorated with artful carvings of various personages, which attested both to the user’s status and to the artist’s creativity. Wooden plates used by Yami (Tao), Ketagalan, Pazeh and Kavalan reflect delightful diversity while suggesting their specialized purpose and reflecting the social status of their users.`}},
+                infoD_08:{zh:{title:`餐桌的記憶`,subtitle:`味覺的殿堂`,img:``,content:`1917年成立於大稻埕的「江山樓」，是20世紀前期臺北知名飲宴場所，也是近代高檔「臺灣菜」餐廳的代表案例之一。可惜的是，它在戰後結束營業，大樓也已拆除，現今無法目睹它的往日風華。不過，從臺史博典藏的江山樓餐具，仍可感受當時的餐飲物質文化；而從廣告、菜單、收據等文件，也能一窺百年前的「臺灣菜」的大致樣貌。`},en:{title:`Mealtime Memories`,subtitle:`The Bastion of Flavors`,img:``,content:`Kang-san-lâu was built in Dadaocheng in 1917 and was Taipei's most renowned banquet hall in the early 20th century. It was also an example of Taiwanese haute cuisine in recent times. Unfortunately, it went out of business after World War II and the building was demolished, so we are now unable to set our eyes on its past glory. Nevertheless, tableware from Kang-san-lâu is preserved in the collection of NMTH, so we can still experience the material culture of dining in those days. We can also get a glimpse of Taiwanese cuisine from a century ago through advertisements, menus, receipts, and other documents.`}},
+                infoD_09:{zh:{title:`餐桌的記憶`,subtitle:`當代主題休憩桌`,img:``,content:``},en:{title:`Mealtime Memories`,subtitle:``,img:``,content:``}},
+                infoD_10:{zh:{title:`餐桌的記憶`,subtitle:`江山樓主題休憩桌`,img:``,content:``},en:{title:`Mealtime Memories`,subtitle:``,img:``,content:``}},
+                infoD_11:{zh:{title:`煙具大驚奇`,subtitle:`似煙非煙是鼻煙`,img:``,content:`鼻煙是由菸葉磨成細粉，加入香料發酵而成，不須點火燃燒有通嚏輕揚之效，清代為盛裝此種輕細粉末，因而發展出小口、廣腹、帶匙蓋的鼻煙壺。鼻煙壺成為當時工藝的縮影，各種材質與技法皆可用於此種小瓶中。人與人見面時先遞鼻煙壺，不僅欣賞精巧的小壺外，更品嘗鼻煙的淡淡幽香，社交活動由此展開。`},en:{title:`Spectacle of Smoking Appliances`,subtitle:`Snuff Powder of Tobacco`,img:``,content:`The snuff is made from fermented tobacco powder blended with aromatic scents. The intake of snuff powder is through nose-inhaling without being lit by fire and to serve the purpose of clearing the airway and lifting spirits. The snuff travelled from Europe into China in the 17th c. and became a trend exclusive to the royal nobles and aristocrats of the era. The snuff bottle had developed the exquisite characteristic of small opening, wide belly, and a lid connected with a spoon to hold this fine powder.`}},
+                infoD_12:{zh:{title:`煙具大驚奇`,subtitle:`讓你忍不住不吸上一口`,img:``,content:`臺灣原住民族群吸煙草的習慣可能早在十六、七世紀大航海時代煙草傳入臺灣後即開始。早期許多原住民族群會於住家或耕地附近種植煙草，自產自用，吸煙習慣不限男女，也幾乎各族皆有。煙斗是吸食煙草的主要器具，基本上有兩種抽法：一是以小刀切碎煙草葉後，放入煙碗中點燃吸食；二則是將煙草捲成條狀後，塞入煙碗點燃吸食。一支煙斗可分為(煙)斗部和煙管兩部分，各族群之煙斗造型變化多樣，或雕刻塑型、或飾以金屬銅釘、或切竹節天成，各富特色，再配上特殊的煙草盒(袋)，展現臺灣原住民族群造型上的創意與美學，讓人忍不住都想吸上一口。`},en:{title:`Spectacle of Smoking Appliances`,subtitle:`Craving a Toke`,img:``,content:`Taiwan indigenous people most likely picked up their smoking habit from foreign traders and colonizers during the 16th and 17th centuries. In the early days, many grew tobacco plants around homes and fields to meet their own needs. Ultimately, both men and women in most tribes were hooked on the pleasures of tobacco. Most indigenous people drew puffs of tobacco smoke from pipe bowls filled with tobacco leaves that had either been finely chopped or rolled into flute-shaped bundles. Although indigenous smoking pipes used a simple bowl-and-tube design, village artisans helped turn them into works of art with carvings and decorative embellishments. Together with hand woven and crafted tobacco leaf holders and pouches, these pipes are an important expression of indigenous innovation and aesthetic taste.`}},
+                infoD_13:{zh:{title:`煙具大驚奇`,subtitle:`癮君子嚴選煙桿／具 `,img:``,content:`最晚在17世紀，煙草就隨著漢人與歐洲人腳步跨海來到臺灣，開啟了臺灣人與尼古丁交會數百年的吞雲吐霧史。在漢人傳統社會裡，吸煙不只解癮頭，更代表某種文化意義，使得煙具已不只是煙具，有的就地取材，有的卻是精雕細繡。這些煙具的多元造型，反映了早期漢人抽煙的方法，以及如何藉其反映自身的社會地位。`},en:{title:`Spectacle of Smoking Appliances`,subtitle:`Select Smoking Accessories for Junkies`,img:``,content:`Tobacco was first brought to Taiwan by Han Chinese and European voyagers in the 17th century at the latest. This began the centuries-long smoky era of Taiwan's coexistence with nicotine.
 Smoking was not only associated with junkies in traditional Han Chinese society, but also came with a set of cultural meanings. Therefore, smoking accessories were more than just that: some were plain, locally-made objects, yet others were exquisite, intricate art pieces. The variety in the appearance of these artifacts reflects the early smoking methods used among Han Chinese people as well as how they could serve to display social status.
 `}},
-infoD_14:{zh:{title:`把酒言歡`,subtitle:`宮廷的精緻酒器`,img:``,content:`宮廷喝酒也要看場合。開筆儀式始於雍正，乾隆繼之，嘉慶仍奉行。儀式在每年元旦子時進行，乾隆皇帝時會到養心殿東暖閣明窗設置案桌，以金甌飲用屠蘇酒，點燃玉燭，手執萬年枝筆，先用硃筆，後用墨書，寫下吉語，祈願新的一年政事通達，翻閱當年曆書，象徵天命的授與，得以順利治理天下，至此一年一度的開筆儀式算是圓滿完成。也有一般宴席用的執壺與酒杯，還有收藏用的琺瑯執壺與杯。不管材質為何，都顯示宮廷器用的精緻與美觀。`},en:{title:`Drink and Have a Good Time`,subtitle:`Exquisite Wine Vessels of the Palace`,img:``,content:`Drinking in the palace was an occasional affair. The writing ceremony began in the Yongzhen reign, inherited by the Qianlong reign, and the practice continued in the Jiaqing reign. The ceremony is performed during the first period (11 pm to 1 am) on the first day of each year. Emperor Qianlong would set the table by the window in Dongnuan Pavilion at the Yangxin Hall- he first drank tusu wine with the gold chalice of eternal stability, lit the candle on the jade candlestick, and held the brush f eternality. With the brush, he wrote down auspicious blessings with initial cinnabar ink, followed by black ink, to pray for stability and prosperity of the nation, and he browsed through the year’s almanac symbolizing the divine right of dominant ruling. After all efforts, the ceremony ended in perfection. There are ewers and wine cups used for general banquets, and ones in enamels for collection; regardless of the materials, they all demonstrate the exquisiteness and beauty of Imperial wares.`}},
-infoD_15:{zh:{title:`把酒言歡`,subtitle:`共飲的藝術`,img:``,content:`雙連杯為排灣族與魯凱族儀式性飲酒器具，使用時兩人各持一端同時仰首飲用，象徵「齊心合作」。連杯多用於歡宴或祭儀儀式，常用的場合如婚禮中新郎與新娘合飲，主人與貴賓或親友合飲。故多數連杯雕刻仔細，紋樣講究。尤其是在兩端握柄與中間相連的直柄上，是裝飾的重點，經常出現人頭、人像、蛇紋、鹿紋、豬紋等圖案，有時也加上鑲嵌(貝)裝飾。因其特殊的形制設計，使用時兩人必須各手執連杯的一端舉杯共飲，必須臉貼臉的酒杯設計象徵兩人關係親近、沒有距離。連杯上的雕刻紋樣也充分展現族群的創意與藝術設計，並將社會文化意涵融會其中。`},en:{title:`Drink and Have a Good Time`,subtitle:`The Art of Drinking Together`,img:``,content:`The twin cups is a ceremonial drinking utensil for the Paiwan and Rukai people. Two people would each hold one end of the apparatus and drink at the same time, demonstrating unity and cooperation. They were often used in banquets and ceremonies, such as weddings where the bride and groom drank together, or when the host drank with friends and relatives. Therefore, most cups were carefully carved and decorated with elaborate patterns, especially the handles and middle and often featured human faces, human figures, snakes, deers, and boars and were sometimes inlaid with shells. Because of its special design, two people each held one end of the vessel and drank together with their faces pressed against each other, symbolizing the closeness of the two people and the absence of distance. The engraved patterns on the cups also demonstrate the creativity and artistic design of the community, and incorporate social and cultural connotations.`}},
-infoD_16:{zh:{title:`把酒言歡`,subtitle:`與神暢飲
+                infoD_14:{zh:{title:`把酒言歡`,subtitle:`宮廷的精緻酒器`,img:``,content:`宮廷喝酒也要看場合。開筆儀式始於雍正，乾隆繼之，嘉慶仍奉行。儀式在每年元旦子時進行，乾隆皇帝時會到養心殿東暖閣明窗設置案桌，以金甌飲用屠蘇酒，點燃玉燭，手執萬年枝筆，先用硃筆，後用墨書，寫下吉語，祈願新的一年政事通達，翻閱當年曆書，象徵天命的授與，得以順利治理天下，至此一年一度的開筆儀式算是圓滿完成。也有一般宴席用的執壺與酒杯，還有收藏用的琺瑯執壺與杯。不管材質為何，都顯示宮廷器用的精緻與美觀。`},en:{title:`Drink and Have a Good Time`,subtitle:`Exquisite Wine Vessels of the Palace`,img:``,content:`Drinking in the palace was an occasional affair. The writing ceremony began in the Yongzhen reign, inherited by the Qianlong reign, and the practice continued in the Jiaqing reign. The ceremony is performed during the first period (11 pm to 1 am) on the first day of each year. Emperor Qianlong would set the table by the window in Dongnuan Pavilion at the Yangxin Hall- he first drank tusu wine with the gold chalice of eternal stability, lit the candle on the jade candlestick, and held the brush f eternality. With the brush, he wrote down auspicious blessings with initial cinnabar ink, followed by black ink, to pray for stability and prosperity of the nation, and he browsed through the year’s almanac symbolizing the divine right of dominant ruling. After all efforts, the ceremony ended in perfection. There are ewers and wine cups used for general banquets, and ones in enamels for collection; regardless of the materials, they all demonstrate the exquisiteness and beauty of Imperial wares.`}},
+                infoD_15:{zh:{title:`把酒言歡`,subtitle:`共飲的藝術`,img:``,content:`雙連杯為排灣族與魯凱族儀式性飲酒器具，使用時兩人各持一端同時仰首飲用，象徵「齊心合作」。連杯多用於歡宴或祭儀儀式，常用的場合如婚禮中新郎與新娘合飲，主人與貴賓或親友合飲。故多數連杯雕刻仔細，紋樣講究。尤其是在兩端握柄與中間相連的直柄上，是裝飾的重點，經常出現人頭、人像、蛇紋、鹿紋、豬紋等圖案，有時也加上鑲嵌(貝)裝飾。因其特殊的形制設計，使用時兩人必須各手執連杯的一端舉杯共飲，必須臉貼臉的酒杯設計象徵兩人關係親近、沒有距離。連杯上的雕刻紋樣也充分展現族群的創意與藝術設計，並將社會文化意涵融會其中。`},en:{title:`Drink and Have a Good Time`,subtitle:`The Art of Drinking Together`,img:``,content:`The twin cups is a ceremonial drinking utensil for the Paiwan and Rukai people. Two people would each hold one end of the apparatus and drink at the same time, demonstrating unity and cooperation. They were often used in banquets and ceremonies, such as weddings where the bride and groom drank together, or when the host drank with friends and relatives. Therefore, most cups were carefully carved and decorated with elaborate patterns, especially the handles and middle and often featured human faces, human figures, snakes, deers, and boars and were sometimes inlaid with shells. Because of its special design, two people each held one end of the vessel and drank together with their faces pressed against each other, symbolizing the closeness of the two people and the absence of distance. The engraved patterns on the cups also demonstrate the creativity and artistic design of the community, and incorporate social and cultural connotations.`}},
+                infoD_16:{zh:{title:`把酒言歡`,subtitle:`與神暢飲
 `,img:``,content:`臺灣民間敬神祭祖多用到酒，酒器變化多端，與酒種類的多元相比，也不遑多讓。講究酒器，反映漢人重視敬神祭祖之事。很多酒壺都是錫製。傳統臺灣民間社會對於錫器的需求很高，許多日常用品舉凡酒器、香爐、燭台、油燈等多是錫製。此處除展示臺史博收藏的錫製酒器外，也有民間以磚燒、貝殼裝飾做成放酒水、供品的祀桌。`},en:{title:`Drink and Have a Good Time`,subtitle:`Entreating the Gods to Come Drink`,img:``,content:`In Taiwan, wine is often used to honor the gods and ancestors. The many variations of wine vessels exceeded the varieties of the types of liquor themselves. The attention to detail in the vessels also reflects the importance that the Han people attached to the worship of the gods and ancestors. Note that many of the wine containers were made of tin. Many everyday objects, such as wine vessels, incense burners, candle holders, and oil lamps, were made of tin. In addition to the tin vessels in the collection of the National Museum of Taiwan History, there is also a ceremonial table decorated with bricks and shells for placing libations and offerings.`}},
-infoD_17:{zh:{title:`我會更美麗`,subtitle:`百年美體時尚學`,img:``,content:`傳統漢人女性會利用許多方法與物件來裝飾身體，一方面展現自己美麗一面；另一方面也是為了呼應社會價值觀，要打扮成「大家覺得好看」的樣子，以呈現社會地位象徵與爭取社會認同。這些華麗的女性飾品，既是當時精細金屬或織繡工藝的精彩發揮，也是
+                infoD_17:{zh:{title:`我會更美麗`,subtitle:`百年美體時尚學`,img:``,content:`傳統漢人女性會利用許多方法與物件來裝飾身體，一方面展現自己美麗一面；另一方面也是為了呼應社會價值觀，要打扮成「大家覺得好看」的樣子，以呈現社會地位象徵與爭取社會認同。這些華麗的女性飾品，既是當時精細金屬或織繡工藝的精彩發揮，也是
 特定時代的裝飾美學。當中有傳統漢人女性的自信與歡愉，或亦有無奈與痛楚。`},en:{title:`Making Myself More Beautiful`,subtitle:`Century-Old Fashion Aesthetics`,img:``,content:`In traditional Han Chinese society, women would use numerous methods and objects to adorn their body. Their purpose was, on the one hand, to dress up for their beloved—as the old saying goes; and on the other, to satisfy social expectations at the time, in other words, to fulfill mainstream beauty ideals and display their social status to obtain social recognition. These sumptuous female ornaments wonderfully embody the most exquisite metalsmithing and embroidery at the time, as well as the fashion aesthetics of a specific era. They also reveal the self-confidence and enjoyment of traditional Han Chinese women—or perhaps the contrary, helplessness and suffering.`}},
-infoD_18:{zh:{title:`我會更美麗`,subtitle:`宮中靚女的時尚`,img:``,content:`珠寶增添女子的姿色，同時也象徵女子的德行和內涵。宮中婦女日常使用的妝扮行頭甚多，鈿子、扁方、簪子，耳墬、指甲套、對鐲等，皆設計精巧。除了象徵皇家權威的東珠(產於中國東北地區的珍珠)與黃金製品，也大量使用翠羽、翡翠。進入十九世紀，
+                infoD_18:{zh:{title:`我會更美麗`,subtitle:`宮中靚女的時尚`,img:``,content:`珠寶增添女子的姿色，同時也象徵女子的德行和內涵。宮中婦女日常使用的妝扮行頭甚多，鈿子、扁方、簪子，耳墬、指甲套、對鐲等，皆設計精巧。除了象徵皇家權威的東珠(產於中國東北地區的珍珠)與黃金製品，也大量使用翠羽、翡翠。進入十九世紀，
 寶石雕成花、葉形狀，並組成立體飾件別具特色。當時，清皇室試圖與歐洲的現代化接軌，因此歐美流行的玻璃「寶石」也成為清皇家時尚不可缺的選擇，紅、藍、綠「寶石」冷暖撞色搭配，也透露與當時世界時尚接軌的訊息。`},en:{title:`Making Myself More Beautiful`,subtitle:`Fashion Trend of the Court Ladies`,img:``,content:`The jewels enhance the charm of a lady and also symbolize one’s virtue and poise. The court ladies had numerous selections for their routine adornment, including hair ornament, hair crosspiece, hairpin, earring, nail guard, and paired bangles, all in exquisite styles. Besides dongzhu freshwater pearls (originated from the Northeast region of China) and gold accessories, countless kingfisher’s feathers and jadeite were incorporated into the design. After the 19th c., it was preferable to have gems carved into shapes of blossom or leaf, then formed the three-dimensional piece that stood out from the rest. The glass-made “gems” popular in the Western world were then embraced by the Qing royal’s fashion. The “gems” in red, blue and green complemented each other with contrast tones of colouration.`}},
-infoD_19:{zh:{title:`我會更美麗`,subtitle:`當她盛裝時`,img:``,content:`這是一個以細膩的織藝、繁複的繡法，以及色彩絢麗的彩珠、與細工磨製貝珠(片)飾品構成的華服與盛裝世界。但在細膩、繁複、絢麗與細工的背後，展現的不只是單純視覺上的美感，同時也是穿者身分、場合與技藝的展示。也就是說，當臺灣原住民族女子盛裝時，不只反映出場合之重大，如婚禮、祭典，也襯托出穿者的地位與身分，有時更反映出女子本身的織藝。`},en:{title:`Making Myself More Beautiful`,subtitle:`When She is Dressed up`,img:``,content:`The finery on display is a sumptuous union of the fabric weaving, embroidery, colorful beadwork, and shell-craft arts. Beyond the craftsmanship required to create such beautiful items, these items offer insights on the wearers’ status and aesthetics. They not only pay respect to the solemn indigenous traditional events such as weddings and ceremonies, but also to the wearer's position and status and her own weaving skills.`}},
-infoD_20:{zh:{title:`我會更美麗`,subtitle:`焦秉貞畫仕女圖　冊`,img:``,content:`清 1644-1911
+                infoD_19:{zh:{title:`我會更美麗`,subtitle:`當她盛裝時`,img:``,content:`這是一個以細膩的織藝、繁複的繡法，以及色彩絢麗的彩珠、與細工磨製貝珠(片)飾品構成的華服與盛裝世界。但在細膩、繁複、絢麗與細工的背後，展現的不只是單純視覺上的美感，同時也是穿者身分、場合與技藝的展示。也就是說，當臺灣原住民族女子盛裝時，不只反映出場合之重大，如婚禮、祭典，也襯托出穿者的地位與身分，有時更反映出女子本身的織藝。`},en:{title:`Making Myself More Beautiful`,subtitle:`When She is Dressed up`,img:``,content:`The finery on display is a sumptuous union of the fabric weaving, embroidery, colorful beadwork, and shell-craft arts. Beyond the craftsmanship required to create such beautiful items, these items offer insights on the wearers’ status and aesthetics. They not only pay respect to the solemn indigenous traditional events such as weddings and ceremonies, but also to the wearer's position and status and her own weaving skills.`}},
+                infoD_20:{zh:{title:`我會更美麗`,subtitle:`焦秉貞畫仕女圖　冊`,img:``,content:`清 1644-1911
 
 焦秉貞（17世紀），所畫人物、宮室，深受西方凹凸技法之影響，是康熙朝首位將西洋畫法融入中國畫的宮廷畫家。 描繪仕女於不同季節中，所展現的各種悠閒情態。背景建築，採用透視畫法，重視染暈，立體感十足。`},en:{title:`Making Myself More Beautiful`,subtitle:`Portrait of court ladies painted by Jiao Bingzhen
 Album`,img:``,content:`Qing dynasty (1644-1911)
 
 Jiao Bingzhen (17th century) painted figures and palaces under the prominent influence of the Western concave-and-convex paintings; Jiao was the first court painter to bring the Western technique into Chinese paintings during the Kangxi reign. The portraits depicted court ladies displaying various leisurely postures in different seasons. The architectural background adapted the aerial perspective and focused on the shading of colours to achieve a vivid sense of dimensions.`}},
-infoD_21:{zh:{title:`情慾世界`,subtitle:`臺灣原住民的兩性物件`,img:``,content:`不要臉紅心跳，也不要覺得離經叛道。臺灣原住民族和許多文化的一樣，並不特別保守也不特別「好色」，男女間的性關係並不是難堪的禁忌，而可視為是一種反映人性的「自然」狀態，也可以是特定物質文化表現形式的主題，以下的作品可當作上述敘述的明證。`},en:{title:`A World of Sexual Passion`,subtitle:`Items Highlighting Indigenous Perspectives on the Sexes`,img:``,content:`No need to clutch your pearls! Like many cultures around the world, Taiwan indigenous people are neither overly prudish nor unduly libertine. Rather than a taboo subject, sex has generally been regarded as a natural reflection of the very nature of the two sexes, deserving to be addressed, like in this section, as a normal part of everyday, material existence.`}},
-infoD_23:{zh:{title:`情慾世界`,subtitle:`風花雪月：漢人社會的性產業`,img:``,content:`真花園是日本時代台南府城頗知名的「貸座敷」(妓院)。1922年日本政府集中管理府城的「貸座敷」，設置「新町遊廓」(今台南中西區康樂、大智、大仁等街一帶)特區，成為風月場所集中區。極盛時期，新町有20多家貸座敷，臺灣人經營的真花園是其中之一。真花園四合院的舊建物在2009年拆除了。展場的真花園相關物件，見證當年的新町風華與風月文化。除真花園物件外，此區也展示壯陽藥品的廣告及海報，顯示性能力一直是男性情慾追求下的基礎核心問題。`},en:{title:`A World of Sexual Passion`,subtitle:`The Sex Industry in Han Chinese Society`,img:``,content:`Zhenhuayuan was a famous brothel in Tainan's capital city during the Japanese era. In 1922, the Japanese government centralized the management of brothels in the capital city and set up a special zone called Sinmachi Yuko (a red-light district in the present-day Central and Western District of Tainan, around the streets of Kangle, Dazhi, and Daren), which became a centralized area for sex establishments. At its peak, there were more than 20 loanshops in Shin-machi. Operated by Taiwanese, the Zhenhuayuan Brothel was one of them. The old building of Zhenhuayuan Brothel was demolished in 2009. The objects related to Zhenhuayuan Brothel in the exhibition hall are a testimony to Shinmachi's glamour and sex culture. In addition to objects from the Zhenhua Brothel, also displayed in this area are advertisements and posters for male virility, indicating that that virility has always been a fundamental and central issue among men in their erotic pursuits.`}},
-infoD_22:{zh:{title:`情慾世界`,subtitle:`皇家的秘戲`,img:``,content:`歐洲進口鍍金鑲嵌腰帶帶頭，類寶石鑲嵌華麗。掀起帶頭蓋面，琺瑯畫人物表情歡愉、瑰麗性感。這類秘戲畫的引入，為後宮帶來一股新的「慾望想像空間」，顯示清皇室君主似乎也並不如想像中的保守。`},en:{title:`A World of Sexual Passion`,subtitle:`The Imperial “Mixi” Erotic Painting`,img:``,content:`The gilt belt buckle imported from Europe has glamorous jewel inlays. The buckle lid lifts to reveal figures painted in enamels, with their faces expressing both pleasure and seduction. The introduction of these erotic paintings to the inner palace brought an innovative “imaginary space of desire”, showing that Qing’s Emperors might not be as conservative as we presumed.`}},
-infoD_24:{zh:{title:`他者的凝視`,subtitle:`清人對外國人的形容`,img:``,content:`清人對洋人的描繪，保有中式假山及水波的特色。而托著寶幢、寶魚及寶瓶的洋人，深目、高鼻、褐髮，有趣的是，他們行單膝跪禮。此姿態令人聯想到清乾隆時期，英國伯爵馬戛爾尼(1793-1794在華)使節團要求「晉見」清乾隆皇帝不行三跪九叩禮，而行歐洲人朝見英國女皇的單膝跪禮一事。亦即，英國向清廷提出兩國地位平等，而非藩屬國關係的歷史。本作品為廣東地區製作，或是清人在馬戛爾尼事件之後，對英人形像的描繪。`},en:{title:`Gaze from the Others`,subtitle:`Qing’s Depiction of the Foreigners`,img:``,content:`The Qing’s depiction of the Westerners still preserved the signatures of Chinese garden mountains and water ripples. The Westerners holding the ceremonial staff, fish, and vase have pronounced facial features in terms of eyes and noses, along with brown hair; more Intriguingly, they are performing kneeling etiquette on one knee. This piece was done in the Guangdong region, which portrayed the Qing’s perceptions of the British after the McCartney incident.`}},
-infoD_25:{zh:{title:`他者的凝視`,subtitle:`原住民族眼中之他者與異國風`,img:``,content:`看與被看，都不只是單純視覺上的反應，同時也是引發想像的觸媒。以下的展品，包括臺灣原住民族工藝品裡的他者(日本人)，與來自日本時代「臺東鄉土館」之木雕，呈現原住民族工藝師凝視他者風格，轉化形成的異國風雕刻，既反映臺灣原住民族的他者想像，也表現原住民族的「異類眼光」。`},en:{title:`Gaze from the Others`,subtitle:`Otherness and Exoticism in the Eyes of Indigenous Peoples`,img:``,content:`Seeing and being seen are not merely a visual response. They also serve as a catalyst for imagination. The following exhibits include the other (Japanese) in Taiwan's indigenous people's crafts and the wood carvings from the Taitung Folklore Museum during the Japanese era, presenting the exotic carvings formed by indigenous craftsmen gazing at the style of the other. They reflect the imagination of the other of the indigenous people of Taiwan and also express the exoticism in the eyes of the indigenous people.`}},
-infoD_26:{zh:{title:`他者的凝視`,subtitle:`觀看與被觀看`,img:``,content:`19世紀後期許多來訪臺灣的歐美人，曾經以他們的獨特觀點，為臺灣漢人地方社會留下許多文字與圖像。這既是珍貴的紀錄，卻也讓臺灣呈現出一種「他者」眼光下的「海外異境」獨特姿態。漢人自己也常以自我為中心，來區分及定義「非漢」的外族人，像
+                infoD_21:{zh:{title:`情慾世界`,subtitle:`臺灣原住民的兩性物件`,img:``,content:`不要臉紅心跳，也不要覺得離經叛道。臺灣原住民族和許多文化的一樣，並不特別保守也不特別「好色」，男女間的性關係並不是難堪的禁忌，而可視為是一種反映人性的「自然」狀態，也可以是特定物質文化表現形式的主題，以下的作品可當作上述敘述的明證。`},en:{title:`A World of Sexual Passion`,subtitle:`Items Highlighting Indigenous Perspectives on the Sexes`,img:``,content:`No need to clutch your pearls! Like many cultures around the world, Taiwan indigenous people are neither overly prudish nor unduly libertine. Rather than a taboo subject, sex has generally been regarded as a natural reflection of the very nature of the two sexes, deserving to be addressed, like in this section, as a normal part of everyday, material existence.`}},
+                infoD_23:{zh:{title:`情慾世界`,subtitle:`風花雪月：漢人社會的性產業`,img:``,content:`真花園是日本時代台南府城頗知名的「貸座敷」(妓院)。1922年日本政府集中管理府城的「貸座敷」，設置「新町遊廓」(今台南中西區康樂、大智、大仁等街一帶)特區，成為風月場所集中區。極盛時期，新町有20多家貸座敷，臺灣人經營的真花園是其中之一。真花園四合院的舊建物在2009年拆除了。展場的真花園相關物件，見證當年的新町風華與風月文化。除真花園物件外，此區也展示壯陽藥品的廣告及海報，顯示性能力一直是男性情慾追求下的基礎核心問題。`},en:{title:`A World of Sexual Passion`,subtitle:`The Sex Industry in Han Chinese Society`,img:``,content:`Zhenhuayuan was a famous brothel in Tainan's capital city during the Japanese era. In 1922, the Japanese government centralized the management of brothels in the capital city and set up a special zone called Sinmachi Yuko (a red-light district in the present-day Central and Western District of Tainan, around the streets of Kangle, Dazhi, and Daren), which became a centralized area for sex establishments. At its peak, there were more than 20 loanshops in Shin-machi. Operated by Taiwanese, the Zhenhuayuan Brothel was one of them. The old building of Zhenhuayuan Brothel was demolished in 2009. The objects related to Zhenhuayuan Brothel in the exhibition hall are a testimony to Shinmachi's glamour and sex culture. In addition to objects from the Zhenhua Brothel, also displayed in this area are advertisements and posters for male virility, indicating that that virility has always been a fundamental and central issue among men in their erotic pursuits.`}},
+                infoD_22:{zh:{title:`情慾世界`,subtitle:`皇家的秘戲`,img:``,content:`歐洲進口鍍金鑲嵌腰帶帶頭，類寶石鑲嵌華麗。掀起帶頭蓋面，琺瑯畫人物表情歡愉、瑰麗性感。這類秘戲畫的引入，為後宮帶來一股新的「慾望想像空間」，顯示清皇室君主似乎也並不如想像中的保守。`},en:{title:`A World of Sexual Passion`,subtitle:`The Imperial “Mixi” Erotic Painting`,img:``,content:`The gilt belt buckle imported from Europe has glamorous jewel inlays. The buckle lid lifts to reveal figures painted in enamels, with their faces expressing both pleasure and seduction. The introduction of these erotic paintings to the inner palace brought an innovative “imaginary space of desire”, showing that Qing’s Emperors might not be as conservative as we presumed.`}},
+                infoD_24:{zh:{title:`他者的凝視`,subtitle:`清人對外國人的形容`,img:``,content:`清人對洋人的描繪，保有中式假山及水波的特色。而托著寶幢、寶魚及寶瓶的洋人，深目、高鼻、褐髮，有趣的是，他們行單膝跪禮。此姿態令人聯想到清乾隆時期，英國伯爵馬戛爾尼(1793-1794在華)使節團要求「晉見」清乾隆皇帝不行三跪九叩禮，而行歐洲人朝見英國女皇的單膝跪禮一事。亦即，英國向清廷提出兩國地位平等，而非藩屬國關係的歷史。本作品為廣東地區製作，或是清人在馬戛爾尼事件之後，對英人形像的描繪。`},en:{title:`Gaze from the Others`,subtitle:`Qing’s Depiction of the Foreigners`,img:``,content:`The Qing’s depiction of the Westerners still preserved the signatures of Chinese garden mountains and water ripples. The Westerners holding the ceremonial staff, fish, and vase have pronounced facial features in terms of eyes and noses, along with brown hair; more Intriguingly, they are performing kneeling etiquette on one knee. This piece was done in the Guangdong region, which portrayed the Qing’s perceptions of the British after the McCartney incident.`}},
+                infoD_25:{zh:{title:`他者的凝視`,subtitle:`原住民族眼中之他者與異國風`,img:``,content:`看與被看，都不只是單純視覺上的反應，同時也是引發想像的觸媒。以下的展品，包括臺灣原住民族工藝品裡的他者(日本人)，與來自日本時代「臺東鄉土館」之木雕，呈現原住民族工藝師凝視他者風格，轉化形成的異國風雕刻，既反映臺灣原住民族的他者想像，也表現原住民族的「異類眼光」。`},en:{title:`Gaze from the Others`,subtitle:`Otherness and Exoticism in the Eyes of Indigenous Peoples`,img:``,content:`Seeing and being seen are not merely a visual response. They also serve as a catalyst for imagination. The following exhibits include the other (Japanese) in Taiwan's indigenous people's crafts and the wood carvings from the Taitung Folklore Museum during the Japanese era, presenting the exotic carvings formed by indigenous craftsmen gazing at the style of the other. They reflect the imagination of the other of the indigenous people of Taiwan and also express the exoticism in the eyes of the indigenous people.`}},
+                infoD_26:{zh:{title:`他者的凝視`,subtitle:`觀看與被觀看`,img:``,content:`19世紀後期許多來訪臺灣的歐美人，曾經以他們的獨特觀點，為臺灣漢人地方社會留下許多文字與圖像。這既是珍貴的紀錄，卻也讓臺灣呈現出一種「他者」眼光下的「海外異境」獨特姿態。漢人自己也常以自我為中心，來區分及定義「非漢」的外族人，像
 是臺灣很多廟宇的廟角屋簷處會出現所謂「番扛廟角」的雕塑。多樣的「番」形象大概都反映了漢人對非漢的所有「番仔」的貶抑，安排他們做很低下的勞力工作。`},en:{title:`Gaze from the Others`,subtitle:`Seeing and being seen`,img:``,content:`Westerners started visiting Taiwan again in the late 19th century and left us with plenty of textual and visual descriptions of Han Chinese local societies at the time from their own unique perspective. Other than serving as valuable records, these show Taiwan as an exotic destination viewed from the eyes of the other—a one-of-a-kind portrayal. The Han themselves often distinguished and defined “non-Han” outsiders from their own egocentric perspective. For example, in many temples in Taiwan, there are carvings of “fan” (foreigners) in the eaves bearing the temple corners. The various representations of “fan”, probably reflect the Han people's deprecation of all non-Han, who were assigned to do menial labor jobs.`}},
-infoD_27:{zh:{title:`他者的凝視`,subtitle:`《倫敦新聞畫報》的格利曼尼臺灣遊記`,img:``,content:`《倫敦新聞畫報》創刊於1842年，為史上第一份以圖畫為主的新聞周刊，
+                infoD_27:{zh:{title:`他者的凝視`,subtitle:`《倫敦新聞畫報》的格利曼尼臺灣遊記`,img:``,content:`《倫敦新聞畫報》創刊於1842年，為史上第一份以圖畫為主的新聞周刊，
 1843年起開始有臺灣報導，對漢人與原住民生活文化多有描繪。1890
 年的「速寫福爾摩沙」系列，首次以連載形式報導打狗海關助理格利曼尼
 (Edmund H. Grimani, 1848-1931)前往萬金庄及山區的遊記。`},en:{title:`Gaze from the Others`,subtitle:`Edmund H. Grimani's writings on his travel to Formosa from The Illustrated London News`,img:``,content:`The Illustrated London News appeared first in 1842 as history's first illustrated weekly news magazine. Starting from 1843, there was coverage about Taiwan, describing the life and culture of Han Chinese and indigenous peoples. The Sketches in Formosa series from 1890 consisted of a series of reports on the travels of Edmund H. Grimani (1848-1931), an assistant at the customs office in Takow, to Bankimsing and the mountains.`}},
-infoD_28:{zh:{title:`他者的凝視`,subtitle:`憨番扛廟角`,img:``,content:`「憨番扛廟角」是臺灣傳統廟宇中，邊角承重構件上常出現的裝飾物，皆以「非漢族人偶」的樣貌出現，大多看起來在扛抬重物。此處除了「憨番扛廟角」的建築構件之外，也有非漢族人偶造型的燭台等擺飾品。`},en:{title:`Gaze from the Others`,subtitle:`Comical Sculptures of Foreigner Used as Temple Roof Support`,img:``,content:`“Comical sculptures of foreigners used as temple roof support” are decorative objects often found in the corners of the roofs of traditional temples in Taiwan. They consist of non-Han Chinese figurines, most of which appear to be bearing heavy loads. In addition to being used in architectural elements, like comical sculptures of foreigners used as temple roof support, non-Han figurines were also used to adorn candleholders and other objects.`}},
-infoD_29:{zh:{title:`禮物政治`,subtitle:`交心與新視覺的禮物`,img:``,content:`快馬加鞭從皇帝那兒送來的禮物，禮輕情意重。據清代歷史資料，每當遙遠的前線有出兵或捷報時，帝王會令人迅速送來餅乾、親筆書法帖、皇家手工荷包或翎管等禮物，藉以鼓舞士氣。相對於帝王的薄禮，子臣上呈在位者的禮物常頗具重量。如意，除了傳達祥意的期許，無非是子臣表達忠誠的心意。來自伊斯蘭地區華麗的贈禮，為清皇室含蓄端莊的美感設計注入新的奢華品味。而原來取法中國的瓷器工藝技術，到十九世紀法國御窯燒造的紅茶杯組，反而為皇室生活增添了多元性。`},en:{title:`Politics of Gifts`,subtitle:`Sincere Gifts that Brought New Visual Sensation`,img:``,content:`Gifts from the Emperor that travelled at full speed represent sincere regard more than value. Archives from the Qing dynasty have several records of whenever there was a troops despatch or a report of victory; the Emperor would send gifts like biscuits, calligraphies written in person, hand-crafted royal pouches and feather holders as his encouragement to lift the morale. Contrary to Emperor’s small gifts, tributes from his officials and ministers were often significant in value. The ruyi sceptre presented the auspicious wishes and also manifested their loyalty. The glamourous gift from the Islamic region brought a luxurious taste into the graceful aesthetic of the Qing court. Furthermore, the black-tea cup set produced by the imperial kiln of France in the 19th century that derived the craftsmanship from Chinese porcelains also added diversity to the Royal household.`}},
-infoD_30:{zh:{title:`禮物政治`,subtitle:`皇帝的伴手禮：巴宰族岸裡社潘家的御賜寶物`,img:``,content:`18世紀，臺灣官員即已安排原住民族進京面聖，回程也都不忘幫其打點些「皇家伴手禮」，讓族人風光地帶回家後還有故事可講。
+                infoD_28:{zh:{title:`他者的凝視`,subtitle:`憨番扛廟角`,img:``,content:`「憨番扛廟角」是臺灣傳統廟宇中，邊角承重構件上常出現的裝飾物，皆以「非漢族人偶」的樣貌出現，大多看起來在扛抬重物。此處除了「憨番扛廟角」的建築構件之外，也有非漢族人偶造型的燭台等擺飾品。`},en:{title:`Gaze from the Others`,subtitle:`Comical Sculptures of Foreigner Used as Temple Roof Support`,img:``,content:`“Comical sculptures of foreigners used as temple roof support” are decorative objects often found in the corners of the roofs of traditional temples in Taiwan. They consist of non-Han Chinese figurines, most of which appear to be bearing heavy loads. In addition to being used in architectural elements, like comical sculptures of foreigners used as temple roof support, non-Han figurines were also used to adorn candleholders and other objects.`}},
+                infoD_29:{zh:{title:`禮物政治`,subtitle:`交心與新視覺的禮物`,img:``,content:`快馬加鞭從皇帝那兒送來的禮物，禮輕情意重。據清代歷史資料，每當遙遠的前線有出兵或捷報時，帝王會令人迅速送來餅乾、親筆書法帖、皇家手工荷包或翎管等禮物，藉以鼓舞士氣。相對於帝王的薄禮，子臣上呈在位者的禮物常頗具重量。如意，除了傳達祥意的期許，無非是子臣表達忠誠的心意。來自伊斯蘭地區華麗的贈禮，為清皇室含蓄端莊的美感設計注入新的奢華品味。而原來取法中國的瓷器工藝技術，到十九世紀法國御窯燒造的紅茶杯組，反而為皇室生活增添了多元性。`},en:{title:`Politics of Gifts`,subtitle:`Sincere Gifts that Brought New Visual Sensation`,img:``,content:`Gifts from the Emperor that travelled at full speed represent sincere regard more than value. Archives from the Qing dynasty have several records of whenever there was a troops despatch or a report of victory; the Emperor would send gifts like biscuits, calligraphies written in person, hand-crafted royal pouches and feather holders as his encouragement to lift the morale. Contrary to Emperor’s small gifts, tributes from his officials and ministers were often significant in value. The ruyi sceptre presented the auspicious wishes and also manifested their loyalty. The glamourous gift from the Islamic region brought a luxurious taste into the graceful aesthetic of the Qing court. Furthermore, the black-tea cup set produced by the imperial kiln of France in the 19th century that derived the craftsmanship from Chinese porcelains also added diversity to the Royal household.`}},
+                infoD_30:{zh:{title:`禮物政治`,subtitle:`皇帝的伴手禮：巴宰族岸裡社潘家的御賜寶物`,img:``,content:`18世紀，臺灣官員即已安排原住民族進京面聖，回程也都不忘幫其打點些「皇家伴手禮」，讓族人風光地帶回家後還有故事可講。
 清代原住民族的「皇家伴手禮之王」應非中部的巴宰族岸裡社潘家莫屬。清初，以岸裡社潘家為首的巴宰族因為屢次協助平亂而深得官府之信任與器重，成為清代中部地區勢力最大的族群，潘家更成為岸裡社最大的家族和地主，全盛時曾擁有今日臺中平原大部分的土地，岸裡潘家中尤以第三代頭目潘敦仔聲勢最盛，也最受官府重用，擔任岸裡九社的總通事，曾於雍正年間受邀赴福建遙祝帝壽並受賜禮品、亦於乾隆35(1770)年受賜封號「大由仁」及水晶花瓶、朝珠、玉碗、瑪瑙及拜匾等寶物。潘敦仔受乾隆皇所賜之禮物，後來一直成為潘家展現地位的傳家珍寶，甚至還廣發邀請函邀族人來社看寶。皇家伴手禮自此變成了傳家寶。`},en:{title:`Politics of Gifts`,subtitle:`Souvenir from the Emperor - Imperial Bestowal to the Pan Family of Pazeh Tribe at Lahodobool`,img:``,content:`In the 18th century, officials in Taiwan had arranged for indigenous people to visit and greet the Emperor at the capital; the ‘Imperial souvenirs’ also came with their return, allowing the clansman had glorious stories to share with the tribe.
 The title of ‘king of Imperial souvenir’ among the indigenous tribes in the Qing dynasty no doubt belonged to the Pan family of the Pazeh tribe at Lahodobool in central Taiwan. In early Qing, the Pan family was trusted and greatly valued for their assistance in restraining rebellions; the Pan family was praised as the most influential landlord at Lahodobool, owning most of the land of the plain in Taichong nowadays. The third-generation chief, Pan Dunzi, received the highest regard and became the prime headman of 9 Lahodobool villages. Pan was invited to Fujian Province to celebrate the Emperor’s birthday in the Yongzhen reign, and then was granted the title of ‘Dayouren’ and received gifts including a crystal vase, court necklace, jade bowl, agate, and plaque in the Qianlong reign. Pan’s bestowals from Emperor Qianlong had become the family legacy that demonstrated social status, and the family even sent out invitations to local official and clan members for treasure viewings. The Imperial souvenir had ever since turned into the family heirloom.`}},
-infoD_31:{zh:{title:`禮物政治`,subtitle:`當御賜成了家傳`,img:``,content:`清廷攏絡的重要對象是地方仕紳豪族。尤其在地方亂事時，對於出錢出力的地方豪族，朝廷論功行賞，賞給官銜或銀牌。每次地方戰亂時，也常是某些人藉此翻身、擴大家族影響力的大好良機。`},en:{title:`Politics of Gifts`,subtitle:`The Imperial bestowals becoming the family heirloom`,img:``,content:`The local gentry and prestige families were the primary targets that the Qing court hoped to rope into their control. Especially during the time of rebellions, the Qing court would grant rewards according to the money and efforts devoted by those guarantors; the bestowals included official ranks or silver plaques. Every local riot presented an opportunity for people to gain success or expand familial influence.`}},
+                infoD_31:{zh:{title:`禮物政治`,subtitle:`當御賜成了家傳`,img:``,content:`清廷攏絡的重要對象是地方仕紳豪族。尤其在地方亂事時，對於出錢出力的地方豪族，朝廷論功行賞，賞給官銜或銀牌。每次地方戰亂時，也常是某些人藉此翻身、擴大家族影響力的大好良機。`},en:{title:`Politics of Gifts`,subtitle:`The Imperial bestowals becoming the family heirloom`,img:``,content:`The local gentry and prestige families were the primary targets that the Qing court hoped to rope into their control. Especially during the time of rebellions, the Qing court would grant rewards according to the money and efforts devoted by those guarantors; the bestowals included official ranks or silver plaques. Every local riot presented an opportunity for people to gain success or expand familial influence.`}},
             }, // title, subtitle, img, content
             sectionE:{
-B1G1:{
-zh:{subtitle:`請對照環景中的物件編號`,
-img:`B1G1`,
-content:`01 瓷仿拉古里木紋釉碗與多穆壺
+                B1G1:{
+                    zh:{subtitle:`請對照環景中的物件編號`,
+                        img:`B1G1`,
+                        content:`01 瓷仿拉古里木紋釉碗與多穆壺
 02 青花番蓮八寶萬壽無疆碗 二件
 03 青花番蓮八寶萬壽無疆碗 二件
 04 福壽雙喜龍鳳金鍋
@@ -156,9 +160,9 @@ content:`01 瓷仿拉古里木紋釉碗與多穆壺
 13 黃地粉彩博古圖碗
 14 白玉雙耳杯 附木座
 15 銅鎏金葫蘆式執壺`},
-en:{subtitle:`Please refer the object number`,
-img:`B1G1`,
-content:`01 Porcelain bowl and  mdong-mo ewer in glaze imitating the grain of laguli wood
+                    en:{subtitle:`Please refer the object number`,
+                        img:`B1G1`,
+                        content:`01 Porcelain bowl and  mdong-mo ewer in glaze imitating the grain of laguli wood
 02 Bowls decorated with Indian lotus scrolls, the eight treasures and inscriptions of “Wanshou wujiang (longevity without boundary)” in underglaze blue
 03 Bowls decorated with Indian lotus scrolls, the eight treasures and inscriptions of “Wanshou wujiang (longevity without boundary)” in underglaze blue
 04 Gold pot decorated with dragon and phoenix presenting luck and longevity
@@ -173,11 +177,11 @@ content:`01 Porcelain bowl and  mdong-mo ewer in glaze imitating the grain of la
 13 Bowl decorated with antiquities on a yellow ground in fencai painted enamels
 14 Jade cup with handles, with wooden stand
 15 Gilt copper ewer in the shape of a gourd`}
-},
-B1G2_1:{
-zh:{subtitle:`請對照環景中的物件編號`,
-img:`B1G2_1`,
-content:`01 排灣族木匙
+                },
+                B1G2_1:{
+                    zh:{subtitle:`請對照環景中的物件編號`,
+                        img:`B1G2_1`,
+                        content:`01 排灣族木匙
 02 排灣族木匙
 03 排灣族木杓
 04 排灣族木匙
@@ -206,9 +210,9 @@ content:`01 排灣族木匙
 27 排灣族木杓
 28 排灣族木杓
 29 排灣族木匙`},
-en:{subtitle:`Please refer the object number`,
-img:`B1G2_1`,
-content:`01 Paiwan Wooden spoon
+                    en:{subtitle:`Please refer the object number`,
+                        img:`B1G2_1`,
+                        content:`01 Paiwan Wooden spoon
 02 Paiwan Wooden spoon
 03 Paiwan Wooden ladle
 04 Paiwan Wooden spoon
@@ -237,11 +241,11 @@ content:`01 Paiwan Wooden spoon
 27 Paiwan Wooden ladle
 28 Paiwan Wooden ladle
 29 Paiwan Wooden spoon`}
-},
-B1G2_2:{
-zh:{subtitle:`請對照環景中的物件編號`,
-img:`B1G2_2`,
-content:`01 江山樓鍋子
+                },
+                B1G2_2:{
+                    zh:{subtitle:`請對照環景中的物件編號`,
+                        img:`B1G2_2`,
+                        content:`01 江山樓鍋子
 02 蓬萊閣紀念橢圓腰子瓷碗
 03 江山樓紀念橢圓腰子瓷碗
 04 江山樓支店火鍋鍋子
@@ -251,9 +255,9 @@ content:`01 江山樓鍋子
 08 江山樓彩繪瓷碗
 09 江山樓紀念瓷碗
 10 江山樓彩繪瓷盤`},
-en:{subtitle:`Please refer the object number`,
-img:`B1G2_2`,
-content:`01 Pot used in Kang-san-lâu
+                    en:{subtitle:`Please refer the object number`,
+                        img:`B1G2_2`,
+                        content:`01 Pot used in Kang-san-lâu
 02 Penglaige commemorative kidney-shaped oval ceramic dish
 03 Commemorative scalloped-edge, oval porcelain bowl used in Kang-san-lâu
 04 Hot pot used in a Kang-san-lâu branch
@@ -263,11 +267,11 @@ content:`01 Pot used in Kang-san-lâu
 08 Hand-painted porcelain bowl used in Kang-san-lâu
 09 Commemorative porcelain bowl used in Kang-san-lâu
 10 Hand-painted porcelain plate used in Kang-san-lâu`}
-},
-C1G1_1:{
-zh:{subtitle:`請對照環景中的物件編號`,
-img:`C1G1_1`,
-content:`01 水晶鼻煙壺
+                },
+                C1G1_1:{
+                    zh:{subtitle:`請對照環景中的物件編號`,
+                        img:`C1G1_1`,
+                        content:`01 水晶鼻煙壺
 02 透明玻璃方壺式鼻煙壺
 03 瑪瑙巧雕得勝圖鼻煙壺
 04 套紅玻璃葫蘆式鼻煙壺
@@ -280,9 +284,9 @@ content:`01 水晶鼻煙壺
 11 青白玉瓜瓞綿綿鼻煙壺
 12 青白玉茄式茄蝶鼻煙壺
 13 青白玉鼻煙壺 五件 附盒`},
-en:{subtitle:`Please refer the object number`,
-img:`C1G1_1`,
-content:`01 Crystal snuff bottle
+                    en:{subtitle:`Please refer the object number`,
+                        img:`C1G1_1`,
+                        content:`01 Crystal snuff bottle
 02 Transparent glass snuff bottle in the shape of a square pot
 03 Agate snuff bottle carved with the scene of victory
 04 Red overlay glass snuff bottle in the shape of a gourd
@@ -295,11 +299,11 @@ content:`01 Crystal snuff bottle
 11 Jade snuff bottle decorated with melon and tendrils
 12 Jade aubergine-shaped snuff bottle decorated with butterfly
 13 Jade snuff bottle (five pieces), with box`}
-},
-C1G1_2:{
-zh:{subtitle:`請對照環景中的物件編號`,
-img:`C1G1_2`,
-content:`01 排灣族煙斗
+                },
+                C1G1_2:{
+                    zh:{subtitle:`請對照環景中的物件編號`,
+                        img:`C1G1_2`,
+                        content:`01 排灣族煙斗
 02 阿美族煙斗
 03 泰雅族女用煙斗
 04 排灣族煙斗
@@ -320,9 +324,9 @@ content:`01 排灣族煙斗
 19 排灣族煙斗
 20 鄒族煙斗
 21 排灣族煙斗`},
-en:{subtitle:`Please refer the object number`,
-img:`C1G1_2`,
-content:`01 Paiwan Smoking pipe
+                    en:{subtitle:`Please refer the object number`,
+                        img:`C1G1_2`,
+                        content:`01 Paiwan Smoking pipe
 02 Amis Smoking pipe
 03 Atayal Woman’s smoking pipe
 04 Paiwan Smoking pipe
@@ -343,11 +347,11 @@ content:`01 Paiwan Smoking pipe
 19 Paiwan smoking pipe
 20 Tsou Smoking pipe
 21 Paiwan smoking pipe`}
-},
-C1G1_3:{
-zh:{subtitle:`請對照環景中的物件編號`,
-img:`C1G1_3`,
-content:`01 樹根旱煙斗及煙草袋
+                },
+                C1G1_3:{
+                    zh:{subtitle:`請對照環景中的物件編號`,
+                        img:`C1G1_3`,
+                        content:`01 樹根旱煙斗及煙草袋
 02 攝影家黃則修自製煙斗
 03 流線型金屬旱煙斗及煙草盒
 04 金屬旱煙斗及金屬煙草盒
@@ -356,9 +360,9 @@ content:`01 樹根旱煙斗及煙草袋
 07 金屬旱煙斗及長命煙草袋
 08 臺北生蕃屋本店發行臺灣老人手握水煙斗明信片
 09 長田繪臺灣漢人士紳手持旱煙桿畫像`},
-en:{subtitle:`Please refer the object number`,
-img:`C1G1_3`,
-content:`01 Root long-stemmed tobacco pipe and tobacco pouch
+                    en:{subtitle:`Please refer the object number`,
+                        img:`C1G1_3`,
+                        content:`01 Root long-stemmed tobacco pipe and tobacco pouch
 02 Tobacco pipe hand-made by photographer Huang Tse-hsiu
 03 Metal long-stemmed, tasseled tobacco pipe and tobacco case
 04 Metal long-stemmed tobacco pipe and tobacco case
@@ -367,31 +371,31 @@ content:`01 Root long-stemmed tobacco pipe and tobacco pouch
 07 Metal long-stemmed tobacco pipe and tobacco pouch embroidered with the words Long life
 08 Post card depicting an old Taiwanese man holding a water pipe, printed by Seibanya in Taipei
 09 Portrait of a Han Chinese gentleman from Taiwan holding a long-stemmed tobacco pipe, by painter surnamed Nagata`}
-},
-D1G1:{
-zh:{subtitle:`請對照環景中的物件編號`,
-img:`D1G1`,
-content:`01 瓷胎畫琺瑯執壺
+                },
+                D1G1:{
+                    zh:{subtitle:`請對照環景中的物件編號`,
+                        img:`D1G1`,
+                        content:`01 瓷胎畫琺瑯執壺
 02 琺瑯彩紫地開光山水海棠式杯、盤
 03 金甌永固杯
 04 玉燭長調燭臺
 05 銅胎畫琺瑯執壺、盤、鐘
 06 御製詩二集
 07 本草綱目`},
-en:{subtitle:`Please refer the object number`,
-img:`D1G1`,
-content:`01 Porcelain ewer in painted enamels
+                    en:{subtitle:`Please refer the object number`,
+                        img:`D1G1`,
+                        content:`01 Porcelain ewer in painted enamels
 02 Begonia-shaped cup decorated with panels of landscapes on a purple ground in falangcai painted enamels
 03 Gold chalice of eternal stability
 04 Jade candlestick of constant harmony
 05 Cooper ewer, plate and zhong cup in painted enamels
 06 Imperial poem volume 2 Album twenty one and twenty two
 07 Compendium of Materia Medica`}
-},
-D1G2:{
-zh:{subtitle:`請對照環景中的物件編號`,
-img:`D1G2`,
-content:`01 排灣族雙連杯
+                },
+                D1G2:{
+                    zh:{subtitle:`請對照環景中的物件編號`,
+                        img:`D1G2`,
+                        content:`01 排灣族雙連杯
 02 排灣族雙連杯
 03 排灣族雙連杯
 04 排灣族雙連杯
@@ -403,9 +407,9 @@ content:`01 排灣族雙連杯
 10 排灣族雙連杯
 11 排灣族男女連杯共飲
 12 排灣族男子連杯聚飲`},
-en:{subtitle:`Please refer the object number`,
-img:`D1G2`,
-content:`01 Paiwan Wooden twin-cups
+                    en:{subtitle:`Please refer the object number`,
+                        img:`D1G2`,
+                        content:`01 Paiwan Wooden twin-cups
 02 Paiwan Wooden twin-cups
 03 Paiwan Wooden twin-cups
 04 Paiwan Wooden twin-cups
@@ -417,11 +421,11 @@ content:`01 Paiwan Wooden twin-cups
 10 Paiwan wooden twin-cups
 11 Paiwan man and woman drinking together from twin cups
 12 Paiwan men drinking together from twin cups`}
-},
-D1G3:{
-zh:{subtitle:`請對照環景中的物件編號`,
-img:`D1G3`,
-content:`01 錫製祭祀用酒壺
+                },
+                D1G3:{
+                    zh:{subtitle:`請對照環景中的物件編號`,
+                        img:`D1G3`,
+                        content:`01 錫製祭祀用酒壺
 02 錫製獅形酒壺蓋紐
 03 米黃釉日式酒壺
 04 元會境火王爺神明會錫製酒壺及酒杯組
@@ -431,9 +435,9 @@ content:`01 錫製祭祀用酒壺
 08 貝殼裝飾祀桌
 09 獅鈕提樑式錫壺
 10 錫製酒壺`},
-en:{subtitle:`Please refer the object number`,
-img:`D1G3`,
-content:`01 Ceremonial tin wine pot Donated by Mr. Chen Chongguang
+                    en:{subtitle:`Please refer the object number`,
+                        img:`D1G3`,
+                        content:`01 Ceremonial tin wine pot Donated by Mr. Chen Chongguang
 02 Lion-shaped tin wine pot cover handle
 03 Japanese-style wine bottle with beige glaze
 04 A tin wine pot and wine cup set from the Fire God of Yuanhuijing Association
@@ -443,21 +447,21 @@ content:`01 Ceremonial tin wine pot Donated by Mr. Chen Chongguang
 08 Shell-decorated ceremonial table
 09 Tin pot with a lion-shaped lid handle
 10 Tin wine pot`}
-},
-E1G3_1:{
-zh:{subtitle:`請對照環景中的物件編號`,
-img:`E1G3_1`,
-content:`左|  新豐庄徐慶瀾家族新娘鳳冠
+                },
+                E1G3_1:{
+                    zh:{subtitle:`請對照環景中的物件編號`,
+                        img:`E1G3_1`,
+                        content:`左|  新豐庄徐慶瀾家族新娘鳳冠
 右|  新豐庄徐慶瀾家族新娘服`},
-en:{subtitle:`Please refer the object number`,
-img:`E1G3_1`,
-content:`Left|  The bridal headdress of Xu Qinglan family in Xinfeng Village
+                    en:{subtitle:`Please refer the object number`,
+                        img:`E1G3_1`,
+                        content:`Left|  The bridal headdress of Xu Qinglan family in Xinfeng Village
 Right|  The bridal gown of Xu Qinglan family in Xinfeng Village`}
-},
-E1G3_2:{
-zh:{subtitle:`請對照環景中的物件編號`,
-img:`E1G3_2`,
-content:`01 鳳凰蝴蝶雙燕翠造型羽釵
+                },
+                E1G3_2:{
+                    zh:{subtitle:`請對照環景中的物件編號`,
+                        img:`E1G3_2`,
+                        content:`01 鳳凰蝴蝶雙燕翠造型羽釵
 02 翠玉蝴蝶花卉樣式髮簪
 03 玉鐲
 04 飛龍翠羽鎏金胸飾
@@ -473,9 +477,9 @@ content:`01 鳳凰蝴蝶雙燕翠造型羽釵
 14 壽字粉盒
 15 新竹丸成白粉舖製飛馬白粉
 16 雕花梳妝箱`},
-en:{subtitle:`Please refer the object number`,
-img:`E1G3_2`,
-content:`01 Hairpin adorned with a phoenix surrounded by a pair of butterflies and of swallows
+                    en:{subtitle:`Please refer the object number`,
+                        img:`E1G3_2`,
+                        content:`01 Hairpin adorned with a phoenix surrounded by a pair of butterflies and of swallows
 02 Hair stick adorned with a jade butterfly and flowers
 03 Jade bracelet
 04 Parcel-gilt gold brooch adorned with jade flying dragons
@@ -491,62 +495,62 @@ content:`01 Hairpin adorned with a phoenix surrounded by a pair of butterflies a
 14 Powder container adorned with the character Shou (longevity)
 15 Face powder of the brand Pegasus, made by the Wan Cheng Face Powder Store in Hsinchu
 16 A carved makeup case`}
-},
-E1G3_3:{
-zh:{subtitle:`請對照環景中的物件編號`,
-img:`E1G3_3`,
-content:`01 三寸金蓮
+                },
+                E1G3_3:{
+                    zh:{subtitle:`請對照環景中的物件編號`,
+                        img:`E1G3_3`,
+                        content:`01 三寸金蓮
 02 紅地彩線繡花三寸金蓮
 03 紅地繡花平底三寸金蓮
 04 葫蘆形腳踝墜飾組
 05 三寸金蓮
 06 木製綁腳椅`},
-en:{subtitle:`Please refer the object number`,
-img:`E1G3_3`,
-content:`01 Lotus shoes
+                    en:{subtitle:`Please refer the object number`,
+                        img:`E1G3_3`,
+                        content:`01 Lotus shoes
 02 Lotus shoes embroidered with iridescent flowers on a red ground
 03 Embroidered red flat bottom Lotus shoes 
 04 Set of gourd-shaped ankle ornaments
 05 Lotus shoes
 06 Wooden chair used for regularly binding and unbinding the feet
 `}
-},
-E1G2:{
-zh:{subtitle:`請對照環景中的物件編號`,
-img:`E1G2`,
-content:`01 布農族骨雕髮簪
+                },
+                E1G2:{
+                    zh:{subtitle:`請對照環景中的物件編號`,
+                        img:`E1G2`,
+                        content:`01 布農族骨雕髮簪
 02 賽德克族梯形貝片珠串耳飾
 03 阿美族象牙腕飾
 04 阿美族象牙腕飾
 05 雅美(達悟)族女子瑪瑙玻璃珠串胸飾
 `},
-en:{subtitle:`Please refer the object number`,
-img:`E1G2`,
-content:`01 Bunun Carved bone hairpin
+                    en:{subtitle:`Please refer the object number`,
+                        img:`E1G2`,
+                        content:`01 Bunun Carved bone hairpin
 02 Seediq Teardrop-shaped shell-bead earrings Buwarung Village (present-day Lushan Community in Jingying Village, Ren’ai  Township, Nantou County)
 03 Amis Ivory Wrist Bangle
 04 Amis Ivory Wrist Bangle
 05 Yami (Tao)Woman’s agate and glass-bead chest ornament Lanyu Township (Orchid Is.), Taitung County
 `}
-},
-E1G2_1:{
-zh:{subtitle:`請對照環景中的物件編號`,
-img:`E1G2_1`,
-content:`06 太魯閣族貝珠頸飾
+                },
+                E1G2_1:{
+                    zh:{subtitle:`請對照環景中的物件編號`,
+                        img:`E1G2_1`,
+                        content:`06 太魯閣族貝珠頸飾
 07 排灣族女子複串琉璃珠胸飾
 08 阿美族瑪瑙珠胸飾
 09 撒奇萊雅族琉璃瑙胸飾`},
-en:{subtitle:`Please refer the object number`,
-img:`E1G2_1`,
-content:`06 Truku Shell-bead necklace
+                    en:{subtitle:`Please refer the object number`,
+                        img:`E1G2_1`,
+                        content:`06 Truku Shell-bead necklace
 07 Paiwan Woman’s multi-strand glass-bead chest ornament
 08 Amis Agate bead chest ornament
 09 Sakizaya Glass-bead and agate chest ornament`}
-},
-E1G1:{
-zh:{subtitle:`請對照環景中的物件編號`,
-img:`E1G1`,
-content:`01 玻璃花簪一對
+                },
+                E1G1:{
+                    zh:{subtitle:`請對照環景中的物件編號`,
+                        img:`E1G1`,
+                        content:`01 玻璃花簪一對
 02 珊瑚蝙蝠簪
 03 嵌珠寶翠玉花卉鈿子
 04 綠玉錢紋指甲套 一對
@@ -554,9 +558,9 @@ content:`01 玻璃花簪一對
 06 金鑲玉福壽萬年扁方
 07  金纍絲水族鐲 一對
 `},
-en:{subtitle:`Please refer the object number`,
-img:`E1G1`,
-content:`01 Hairpins decorated with flowers in glass (a pair)
+                    en:{subtitle:`Please refer the object number`,
+                        img:`E1G1`,
+                        content:`01 Hairpins decorated with flowers in glass (a pair)
 02 Hairpin decorated with a bat in coral
 03 Headdress inlaid with pearl, jadeite, and gemstone in floral shapes
 04 Jade nail guards decorated with coin pattern (a pair)
@@ -564,79 +568,81 @@ content:`01 Hairpins decorated with flowers in glass (a pair)
 06 Gold hair crosspiece decorated with auspicious emblems in jadeite
 07 Gold filigree bangles decorated with aquatic creatures (a pair)
 `}
-},
-E1G1_2:{
-zh:{subtitle:`請對照環景中的物件編號`,
-img:`E1G1_2`,
-content:`01 焦秉貞畫仕女圖 冊 梧階夜雨
+                },
+                E1G1_2:{
+                    zh:{subtitle:`請對照環景中的物件編號`,
+                        img:`E1G1_2`,
+                        content:`01 焦秉貞畫仕女圖 冊 梧階夜雨
 02 焦秉貞畫仕女圖　冊　松閣笙歌
 03 焦秉貞畫仕女圖　冊　梅窗剌繡
 04 焦秉貞畫仕女圖　冊　秉燭敲棋`},
-en:{subtitle:`Please refer the object number`,
-img:`E1G1_2`,
-content:`01 Portrait of court ladies painted by Jiao Bingzhen Album Falling night rain upon the sycamore steps
+                    en:{subtitle:`Please refer the object number`,
+                        img:`E1G1_2`,
+                        content:`01 Portrait of court ladies painted by Jiao Bingzhen Album Falling night rain upon the sycamore steps
 02 Portrait of court ladies painted by Jiao Bingzhen Album Playing sheng pipe at the pine pavilion
 03 Portrait of court ladies painted by Jiao Bingzhen Album Practicing embroidery by the plum window
 04 Portrait of court ladies painted by Jiao Bingzhen Album Playing go game by the candlelight`}
-},
-F1G2_1:{
-zh:{subtitle:`請對照環景中的物件編號`,
-img:`F1G2_1`,
-content:`左|  排灣族雕刻人像
+                },
+                F1G2_1:{
+                    zh:{subtitle:`請對照環景中的物件編號`,
+                        img:`F1G2_1`,
+                        content:`左|  排灣族雕刻人像
 中|  排灣族男女石雕像
 右|  排灣族木刻鏡板`},
-en:{subtitle:`Please refer the object number`,
-img:`F1G2_1`,
-content:`Left|   Paiwan Carved statue
+                    en:{subtitle:`Please refer the object number`,
+                        img:`F1G2_1`,
+                        content:`Left|   Paiwan Carved statue
 Middle|  Paiwan Stone carving of a man and woman
 Right|  Paiwan Carved wooden mirror backboard`}
-},
-F1G2_2:{
-zh:{subtitle:`請對照環景中的物件編號`,
-img:`F1G2_2`,
-content:`排灣族木雕板`},
-en:{subtitle:`Please refer the object number`,
-img:`F1G2_2`,
-content:`Paiwan Carved wooden board`}
-},
-F1G3:{
-zh:{subtitle:`請對照環景中的物件編號`,
-img:`F1G3`,
-content:`真花園木招牌
-臺南真花園燈箱與錫燈
-臺南真花園燈箱與錫燈
-01 美美特種行業招牌
-02 〈臺南案內〉地圖
-03 真花園統計號碼箱
-04 真花園號碼章
-05 真花園宿夜票與時間票
-01 壯陽藥海報
+                },
+                F1G2_2:{
+                    zh:{subtitle:`請對照環景中的物件編號`,
+                        img:`F1G2_2`,
+                        content:`排灣族木雕板`},
+                    en:{subtitle:`Please refer the object number`,
+                        img:`F1G2_2`,
+                        content:`Paiwan Carved wooden board`}
+                },
+                F1G3:{
+                    zh:{subtitle:`請對照環景中的物件編號`,
+                        img:`F1G3`,
+                        content:`"01 美美特種行業招牌
+    02 〈臺南案內〉地圖
+    03 真花園統計號碼箱
+    04 真花園號碼章
+    05 真花園宿夜票與時間票
+    `},
+                    en:{subtitle:`Please refer the object number`,
+                        img:`F1G3`,
+                        content:`01 Character from the Meimei Brothel’s sign
+    02 Tainan Guidebook map
+    03 Wooden box to keep track of payment from the Zhenhuayuan Brothel
+    04 Number stamps from the Zhenhuayuan Brothel
+    05 “Overnight” and “timed” tickets from the Zhenhuayuan Brothel
+    `}
+                },
+                F1G3_1:{
+                    zh:{subtitle:`請對照環景中的物件編號`,
+                        img:`F1G3_1`,
+                        content:`"01 壯陽藥海報
 02 壯陽藥海報
 03 壯陽藥海報
 04 臺北大稻埕街天馬妓女戶鏡子
 05 色情行業奉祀的行業神天蓬元帥
 06 黃清淵潤青堂藥袋及商標紙`},
-en:{subtitle:`Please refer the object number`,
-img:`F1G3`,
-content:`Wooden sign for Zhenhuayuan Brothel
-Lamp cabinet and tin lamp from the Zhenhuayuan Brothel in Tainan
-Lamp cabinet and tin lamp from the Zhenhuayuan Brothel in Tainan
-01 Character from the Meimei Brothel’s sign
-02 Tainan Guidebook map
-03 Wooden box to keep track of payment from the Zhenhuayuan Brothel
-04 Number stamps from the Zhenhuayuan Brothel
-05 “Overnight” and “timed” tickets from the Zhenhuayuan Brothel
-01 Poster for male virility drug
+                    en:{subtitle:`Please refer the object number`,
+                        img:`F1G3_1`,
+                        content:`01 Poster for male virility drug
 02 Poster for male virility drug
 03 Poster for male virility drug
 04 Mirror from Tienma Brothel on Dadaocheng Street in Taipei
 05 Marshal Tian Peng, the god of the sex industry
 06 Medicine bag and logo paper from Huang Qingyuan Runqingtang Chinese Medicine Shop`}
-},
-A1G1:{
-zh:{subtitle:`請對照環景中的物件編號`,
-img:`A1G1`,
-content:`王禔篆書八言聯　軸
+                },
+                A1G1:{
+                    zh:{subtitle:`請對照環景中的物件編號`,
+                        img:`A1G1`,
+                        content:`王禔篆書八言聯　軸
 吳熙載篆書五言聯　軸
 全壽圖 冊
 掐絲琺瑯萬壽無疆大碗
@@ -644,9 +650,9 @@ content:`王禔篆書八言聯　軸
 白玉壽字紋方壺
 榮惠皇貴妃金印
 榮惠皇貴太妃金印`},
-en:{subtitle:`Please refer the object number`,
-img:`A1G1`,
-content:`Eight-character couplet in seal script, written by Wang Zhi Hanging scroll
+                    en:{subtitle:`Please refer the object number`,
+                        img:`A1G1`,
+                        content:`Eight-character couplet in seal script, written by Wang Zhi Hanging scroll
 Five-character couplet in seal script, written by Wu Xizai Hanging scroll
 Longevity Character in All Scripts
 Bowl decorated with inscriptions of “Wanshou wujiang (longevity without boundary)” in cloisonné enamels
@@ -654,21 +660,21 @@ Gilt copper zun vase with longevity decoration in archaic style
 Jade square pot decorated with characters of longevity
 Gold seals of the Imperial honourebd consort Jung-hui
 Gold seals of the Imperial honoured dowager Jung-hui`}
-},
-A1G3_1:{
-zh:{subtitle:`請對照環景中的物件編號`,
-img:`A1G3_1`,
-content:`左| 兩廣地區法師彩繪道服
+                },
+                A1G3_1:{
+                    zh:{subtitle:`請對照環景中的物件編號`,
+                        img:`A1G3_1`,
+                        content:`左| 兩廣地區法師彩繪道服
 右| 貼有淨符的南投竹山福順宮官將首羽毛扇`},
-en:{subtitle:`Please refer the object number`,
-img:`A1G3_1`,
-content:`左| Embroidered Taoist robe from the Guangdong-Guangxi region
+                    en:{subtitle:`Please refer the object number`,
+                        img:`A1G3_1`,
+                        content:`左| Embroidered Taoist robe from the Guangdong-Guangxi region
 右| Feather fan with purification talisman used in Kuann-tsiòng-siú (guardians of the bodhisattva Titsang, lord of the underworld) processional dances of Fushun Temple in Zhushan, Nantou`}
-},
-A1G3_2:{
-zh:{subtitle:`請對照環景中的物件編號`,
-img:`A1G3_2`,
-content:`01 臺北三芝張家籤詩與咒語簿《籤詩觧》
+                },
+                A1G3_2:{
+                    zh:{subtitle:`請對照環景中的物件編號`,
+                        img:`A1G3_2`,
+                        content:`01 臺北三芝張家籤詩與咒語簿《籤詩觧》
 02 臺北三芝張家漢醫文獻《應治小兒內外科引痘略全本》
 03 臺北三芝張家勘輿文獻《造葬總論》
 04 臺北三芝張家符仔冊《掌圖秘訣》
@@ -676,9 +682,9 @@ content:`01 臺北三芝張家籤詩與咒語簿《籤詩觧》
 06 廣顯壇手轎
 07 鸞筆
 黃金田繪「扶手轎」`},
-en:{subtitle:`Please refer the object number`,
-img:`A1G3_2`,
-content:`01 Explanation of Oracle Poems, oracle poem and mantra
+                    en:{subtitle:`Please refer the object number`,
+                        img:`A1G3_2`,
+                        content:`01 Explanation of Oracle Poems, oracle poem and mantra
 book from the Chang family in Sam-pang-kiô
 02 Treatise on Smallpox Disease for the Inner and Outer
 Cure of Small Children, Chinese medicine treatise from
@@ -689,27 +695,27 @@ the Chang family in Sam-pang-kiô
 06 Portable palanquin inscribed with the words Guangxiantan
 07 Forked stick used for spirit writing
 Holding the Portable Palanquin, painting by Huang Chin-tien`}
-},
-G1G1:{
-zh:{subtitle:`請對照環景中的物件編號`,
-img:`G1G1`,
-content:`銅胎畫琺瑯洋人托寶幢
+                },
+                G1G1:{
+                    zh:{subtitle:`請對照環景中的物件編號`,
+                        img:`G1G1`,
+                        content:`銅胎畫琺瑯洋人托寶幢
 銅胎畫琺瑯洋人托寶魚
 銅胎畫琺瑯洋人托寶瓶
 銅胎畫琺瑯六角黃地蓋罐
 銅胎畫琺瑯魚缸`},
-en:{subtitle:`Please refer the object number`,
-img:`G1G1`,
-content:`Copper Western figurine holding a ceremonial staff in painted enamels
+                    en:{subtitle:`Please refer the object number`,
+                        img:`G1G1`,
+                        content:`Copper Western figurine holding a ceremonial staff in painted enamels
 Copper Western figurine holding paired fish in painted enamels
 Copper Western figurine holding a vase in painted enamels
 Copper hexagonal lidded jar with decorations on a yellow ground in painted enamels
 Copper fish bowl in painted enamels`}
-},
-G1G2:{
-zh:{subtitle:`請對照環景中的物件編號`,
-img:`G1G2`,
-content:`01 臺東鄉土館「吐舌人像」木雕板
+                },
+                G1G2:{
+                    zh:{subtitle:`請對照環景中的物件編號`,
+                        img:`G1G2`,
+                        content:`01 臺東鄉土館「吐舌人像」木雕板
 02 臺東鄉土館木雕板
 03 臺東鄉土館木雕板
 04 臺東鄉土館木雕板
@@ -717,9 +723,9 @@ content:`01 臺東鄉土館「吐舌人像」木雕板
 06 排灣族日本警察／軍人木雕匙
 07 排灣族日本警察／軍人雕像
 08 臺東鄉土館立體圓雕人像`},
-en:{subtitle:`Please refer the object number`,
-img:`G1G2`,
-content:`01 Carved board with the protruding tongue figures from the Taitung Folklore Museum
+                    en:{subtitle:`Please refer the object number`,
+                        img:`G1G2`,
+                        content:`01 Carved board with the protruding tongue figures from the Taitung Folklore Museum
 02 Carved wooden panel from the Taitung Folklore Museum
 03 Carved wooden panel from the Taitung Folklore Museum
 04 Carved wooden panel from the Taitung Folklore Museum
@@ -727,57 +733,65 @@ content:`01 Carved board with the protruding tongue figures from the Taitung Fol
 06 Paiwan Wooden spoon with carved Japanese policeman/soldier
 07 Paiwan Japanese policeman/soldier wood carving
 08 Carved-in-the-round figure from the Taitung Folklore Museum`}
-},
-G1G3:{
-zh:{subtitle:`請對照環景中的物件編號`,
-img:`G1G3`,
-content:`《倫敦新聞畫報》臺灣漢人禮儀風俗之報導
-《倫敦新聞畫報》臺灣漢人禮儀風俗之報導
-格利曼尼〈速寫福爾摩沙：跌入流沙、在打狗划獨木舟〉
-格利曼尼〈速寫福爾摩沙：「番人」活動中的奇妙演出〉等
-格利曼尼〈速寫福爾摩沙：「番人」碰觸我們的肌肉、在路上停歇〉
-格利曼尼〈速寫福爾摩沙：危險的陡坡、被水牛追〉
-格利曼尼〈速寫福爾摩沙：竹林裡〉
-格利曼尼〈速寫福爾摩沙：再會了萬金庄〉
-格利曼尼〈速寫福爾摩沙：受漢人耆老的歡迎〉等
-格利曼尼〈速寫福爾摩沙：抵達萬金庄〉
-01 木雕憨番飾品
+                },
+                G1G3:{
+                    zh:{subtitle:`請對照環景中的物件編號`,
+                        img:`G1G3`,
+                        content:`01 木雕憨番飾品
 02 憨番扛厝托木組
 03 憨番造型錫製燭臺
 04 憨番扛燭台雕
 05 木雕憨番像
 06 憨番造型方形磚塊`},
-en:{subtitle:`Please refer the object number`,
-img:`G1G3`,
-content:`A report on the etiquette and customs of the Han Chinese in Taiwan by The Illustrated London News
-A report on the etiquette and customs of the Han Chinese in Taiwan by The Illustrated London News
-Edmund H. Grimani's Sketches in Formosa: Tumbling in the Quicksands; Canoeing at Takow, Formosa
-Edmund H. Grimani's Sketches in Formosa: Quaint Performance at a Savage Entertainment, etc.
-Edmund H. Grimani's Sketches in Formosa: The Savages Feel Our Muscle; Halt on the Road
-Edmund H. Grimani's Sketches in Formosa: A Hazardous Descent; Pursued by Water-Buffaloes
-Edmund H. Grimani's Sketches in Formosa: In a bamboo forest
-Edmund H. Grimani's Sketches in Formosa: Farewell to Bankimsing
-Edmund H. Grimani's Sketches in Formosa: Welcome by an Old Chinese Friend, etc.
-Edmund H. Grimani's Sketches in Formosa: Arrival at Bankimsing
-01 Foreigner Wood Carvings
+                    en:{subtitle:`Please refer the object number`,
+                        img:`G1G3`,
+                        content:`01 Foreigner Wood Carvings
 02 Foreigner Wooden Bracket
 03 Foreign styled tin candlestick
 04 Foreigner carved candleholders
 05 Foreigner wooden figurine
 06 Foreigner rectangular brick`}
-},
-H1G0:{
-zh:{subtitle:`請對照環景中的物件編號`,
-img:`H1G0`,
-content:`清代寶藍絲緞盤金刺繡蟒袍`},
-en:{subtitle:`Please refer the object number`,
-img:`H1G0`,
-content:`Official robe embroidered with gold on navy-blue silk`}
-},
-H1G1:{
-zh:{subtitle:`請對照環景中的物件編號`,
-img:`H1G1`,
-content:`01 鍍金纍絲鑲松石福壽如意
+                },
+                G1G3_1:{
+                    zh:{subtitle:`請對照環景中的物件編號`,
+                        img:`G1G3_1`,
+                        content:`01 六角黃地蓋罐的圖案細節放大圖
+    02 銅胎畫琺瑯六角黃地蓋罐
+    03 銅胎畫琺瑯魚缸
+    04 魚缸的圖案細節放大圖`},
+                    en:{subtitle:`Please refer the object number`,
+                        img:`G1G3`,
+                        content:`01 pattern details from Copper hexagonal lidded jar
+    02 Copper hexagonal lidded jar with decorations on a yellow ground in painted enamels
+    03 Copper fish bowl in painted enamels
+    04  pattern details from Copper fish bowl`}
+                },
+                H1G0:{
+                    zh:{subtitle:`請對照環景中的物件編號`,
+                        img:`H1G0`,
+                        content:`清代寶藍絲緞盤金刺繡蟒袍`},
+                    en:{subtitle:`Please refer the object number`,
+                        img:`H1G0`,
+                        content:`Official robe embroidered with gold on navy-blue silk`}
+                },
+                H1G0_1:{
+                    zh:{subtitle:`請對照環景中的物件編號`,
+                        img:`H1G0_1`,
+                        content:`01 清代黑絲緞對襟五品補服
+    02 新竹李錫金家族後人捐官夏季涼帽 
+    03  清代霧峰林家林文欽「賞戴花翎」牌
+    04 清代霧峰林家擔任陸路提督軍門林文察獎賞用的賞牌`},
+                    en:{subtitle:`Please refer the object number`,
+                        img:`H1G0`,
+                        content:`01 Fifth-rank official badge of black silk in bottom-front style
+    02 Summer official cap donated by the Li Xijing Family in Hsinchu
+    03 Lin Wen-chin’s Administrator’s Signboard Bearing the Words ‘Privilege of Wearing Peacock Feathers’
+    04 Award Badge Issued by Lin Wen-cha`}
+                },
+                H1G1:{
+                    zh:{subtitle:`請對照環景中的物件編號`,
+                        img:`H1G1`,
+                        content:`01 鍍金纍絲鑲松石福壽如意
 02 奏進番茉莉等物清單摺
 03 金嵌珠石帽花 
 04 包金嵌珠石帽花 三件
@@ -789,9 +803,9 @@ content:`01 鍍金纍絲鑲松石福壽如意
 10 湖綠釉翎管
 11 白瓷描金鏤空雕花茶杯與托
 12 白瓷描金鏤空雕花茶杯與托`},
-en:{subtitle:`Please refer the object number`,
-img:`H1G1`,
-content:`01 Gilt ruyi sceptre in filigree metalworks inlaid with turquoise
+                    en:{subtitle:`Please refer the object number`,
+                        img:`H1G1`,
+                        content:`01 Gilt ruyi sceptre in filigree metalworks inlaid with turquoise
 02 Palace memorial on submitting manaca rain-tree, etc.
 03 Gold hat ornament inlaid with pearl and gem
 04 Three gold-foiled hat ornaments inlaid with pearl and gem
@@ -803,11 +817,11 @@ content:`01 Gilt ruyi sceptre in filigree metalworks inlaid with turquoise
 10 Feather holder in lake-green golaze
 11 White porcelain tea cup and saucer decorated with openworks and gold tracing
 12 White porcelain tea cup and saucer decorated with openworks and gold tracing`}
-},
-H1G2:{
-zh:{subtitle:`請對照環景中的物件編號`,
-img:`H1G2`,
-content:`01 乾隆御賜潘敦仔之朝珠
+                },
+                H1G2:{
+                    zh:{subtitle:`請對照環景中的物件編號`,
+                        img:`H1G2`,
+                        content:`01 乾隆御賜潘敦仔之朝珠
 02 乾隆御賜潘敦仔之瑪瑙珠項鍊
 03 乾隆御賜潘敦仔之瑪瑙珠項鍊
 04 乾隆御賜潘敦仔之瑪瑙珠項鍊
@@ -816,9 +830,9 @@ content:`01 乾隆御賜潘敦仔之朝珠
 07 乾隆御賜潘敦仔之水晶/玻璃瓶玻璃碗
 08 潘敦仔帝賜諸寶物照片(日本時代台中展示照)
 09 潘敦仔帝賜諸寶物照片(日本時代台中展示照)`},
-en:{subtitle:`Please refer the object number`,
-img:`H1G2`,
-content:`01 Court necklace bestowed by Emperor Qianlong to Pan Dunzi
+                    en:{subtitle:`Please refer the object number`,
+                        img:`H1G2`,
+                        content:`01 Court necklace bestowed by Emperor Qianlong to Pan Dunzi
 02 Agate-bead necklace bestowed by Emperor Qianlong to Pan Dunzi 
 03 Agate-bead necklace bestowed by Emperor Qianlong to Pan Dunzi 
 04 Agate-bead necklace bestowed by Emperor Qianlong to Pan Dunzi 
@@ -827,8 +841,53 @@ content:`01 Court necklace bestowed by Emperor Qianlong to Pan Dunzi
 07 Crystal/glass bowl bestowed by Emperor Qianlong to Pan Dunzi
 08 Photo of treasures bestowed by the Emperor to Pan Dunzi
 09 Photo of treasures bestowed by the Emperor to Pan Dunzi`}
-},
+                },
             }, // subtitle, img, content
+            sectionF:{
+                infoF_01:{zh:{title:`王禔篆書八言聯　軸`,subtitle:`清 1644-1911`,content:`王禔(1878-1960)，杭州人。承家學，喜蓄印，自稱印傭。工書，鐘鼎、楷、隸無不能。又精刻印，得浙派神隨。釋文：「水木清華呼朋小飲。河山明秀涉筆成圖。」結字具圖像裝飾意味。`,},en:{title:`Eight-character couplet in seal script, written by Wang Zhi
+Hanging scroll`,subtitle:`Qing dynasty (1644-1911)`,content:`Wang Zhi (1878-1960), from Hangzhou Province. Wang inherited his family legacy as a collector of seals and called himself the ‘servant of seals’. Wang excelled in calligraphy writing, inscriptions on ancient bronzes, regular script, and official script. As an accomplished seal carver, Wang owned the quintessence of the Zhejiang school. The composition of each word shows an ornamental intention.`,}},
+                infoF_02:{zh:{title:`吳熙載篆書五言聯　軸`,subtitle:`清 1644-1911`,content:`吳熙載（1799-1870），號讓之，江蘇人。包世臣（1775-1855）入室弟子，以篆刻、書畫聞名，尤善篆刻，為金石入書畫先驅，對吳昌碩等人有深遠啟發。釋文：「壺觴寄豪放。絲竹寫襟期。」結字秀雅，然文意氣勢雄渾。`,},en:{title:`Five-character couplet in seal script, written by Wu Xizai
+Hanging scroll`,subtitle:`Qing dynasty (1644-1911)`,content:`Wu Xizai (1799-1870), with the style name Rangzhi, originated in Jiangsu Province. Wu was the apprentice of Bao Shichen (1775-1855) and was renowned for his seal carving and calligraphy. Wu excelled in seal carving and pioneered in bringing the concept of bronze inscriptions into calligraphy; Wu stands as a profound inspiration for people such as Wu Changshuo. The elegant composition possesses the meaning of imposing momentum.`,}},
+                infoF_03:{zh:{title:`全壽圖 冊`,subtitle:`清 1644-1911`,content:`以泥金於藏青色絹上，寫壽字一百二十體，各體俱不相類，極富變化。壽字下方，並以細字楷書標註書體 ，部分取義於象形，更多聞所未聞，蔚成壽字大觀。推測應是供作清代宮廷中的賀壽用途。`,},en:{title:`Longevity Character in All Scripts`,subtitle:`Qing dynasty (1644-1911)`,content:`Shou (longevity) characters written in gold ink on the marine blue silk, in a total of 120 scripts that vary from one another, demonstrate a fascinating diversity. Beneath each shou character, annotated the script name in fine regular-script writing. Some of the names come from pictographic interpretations. This innovative idea was never before seen, which generated novelty for the viewers. The piece is anonymous but suspected to serve the purpose of celebrating birthdays in the Qing court.`,}},
+                infoF_04:{zh:{title:`鸞筆`,subtitle:`20世紀`,content:`傳統文人在「扶鸞」儀式中，利用此種鸞筆寫下神明的字語。`,},en:{title:`Forked stick used for spirit writing`,subtitle:`20th c.`,content:`Educated men would use this sort of forked stick to write down the words of deities in traditional spirit writing (hû-luân) rituals.`,}},
+                infoF_05:{zh:{title:`廣顯壇手轎`,subtitle:`20世紀`,content:`漢人民間信仰中，神明會降駕於轎，兩位「轎手」則持握轎腳，於桌面或沙盤寫下神明所傳達的話語。`,},en:{title:`Portable palanquin inscribed with the words Guangxiantan`,subtitle:`20th c.`,content:`According to Han Chinese folk beliefs, the deity will descend to sit on the palanquin. Two bearers hold the legs of the palanquin and write the words expressed by the deity on a desk or sand tray.`,}},
+                infoF_07:{zh:{title:`伊念曾篆書七言聯　軸`,subtitle:`清 1644-1911`,content:`伊念曾（1790-1861） 工書法、篆刻。釋文：「仁壽摛聲樂無極。文章大吉君享遷。」，款：集古鏡銘為念樓仁弟大雅正之。丁亥（1827）七月。梅槎伊念曾時南還。書此志別。結字寬博嚴整，氣質高古樸質。`,},en:{title:`Seven-character couplet in seal script, written by Yin Nianzeng
+Hanging scroll`,subtitle:`Qing dynasty (1644-1911)`,content:`Yin Nianzeng (1790-1861) specialized in calligraphy and seal carving. The couplet has the inscription of ‘words from the ancient mirror are collected in memory of brother Louren and for his reference. In July of 1827, Meicha Yin Nianzeng returned to the south. Giving farewell with this letter. The meticulous composition demonstrates a rustic quality.`,}},
+                infoF_08:{zh:{title:`趙之謙篆書七言聯　軸`,subtitle:`清 1644-1911`,content:`趙之謙（1829-1884）。本聯字之結體，婀娜多姿，饒有動態。婉轉流暢中，別具古雅氣息，正是趙書的特色。 釋文：萬物不平有風俗，七情之合為中龢。勳唐七兄大人雅屬。集會稽刻石。趙之謙。`,},en:{title:`Seven-character couplet in seal script, written by Zhao Zhiqian
+Hanging scroll`,subtitle:`Qing dynasty (1644-1911)`,content:`Zhao Zhiqian (1829-1884). The composition of words in this couplet demonstrates a sensual dynamic. The fluent curves present a sense of elegance, which was the signature of Zhao’s calligraphy. The inscription reads ‘Belong to mister Xuntang the 7th brother. Carvings were collected from Huiji. Zhao Zhiqian.’`,}},
+                infoF_09:{zh:{title:`瓷仿拉古里木紋釉碗與多穆壺`,subtitle:`清 1644-1911`,content:`受蒙古族的影響，滿人飲用磚茶、鹽及酥油等材料熬製而成的鹹奶茶養生。滿州人入主紫禁城之後，更將奶茶升格為宮宴開席的「國俗」飲品。`,},en:{title:`Porcelain bowl and  mdong-mo ewer in glaze imitating the grain of laguli wood`,subtitle:`Qing dynasty (1644-1911)`,content:`Under Mongolian influence, the Manchu people also have consumed salty milk tea made of tea brick, salt, and butter. When the Manchu people entered the Forbidden City, they thus then elevated the milk tea as the beverage that represented “costume of the Nation” to begin the Royal banquet.`,}},
+                infoF_10:{zh:{title:`福壽雙喜龍鳳金鍋`,subtitle:`清 十九世紀`,content:`火鍋湯品深受清皇室的喜愛。清朝慈禧太后(1835-1908)也曾經為她兒子同治皇帝(1861-1875在位)的婚禮定製類似的金鍋。`,},en:{title:`Gold pot decorated with dragon and phoenix presenting luck and longevity`,subtitle:`Qing dynasty, 19th c`,content:`The hotpot cuisine with soup was beloved by the Qing’s royals. Empress Dowager (1835-1908) had also customized a similar gold pot.`,}},
+                infoF_11:{zh:{title:`白套二色玻璃丹鳳朝陽鼻煙壺`,subtitle:`清 1644-1911`,content:`早期鼻煙壺多是玻璃製成，這件鼻煙壺上套二色玻璃，形成色層，再根據紋樣雕刻，於是白玻璃上的粉紅牡丹盛開了。`,},en:{title:`Dual-color-on-white overlay glass snuff bottle decorated with phoenix and sun`,subtitle:`Qing dynasty (1644-1911)`,content:`The snuff bottles mostly used glass as the base material in the early times. The coating in two other layers of coloured glass created the colours of this exhibit; and by carving out the designed pattern to present a blooming pink peony on the white ground.`,}},
+                infoF_12:{zh:{title:`瑪瑙巧雕得勝圖鼻煙壺`,subtitle:`清 十八至十九世紀`,content:`利用瑪瑙天然色層，雕刻出一人拿旗幟騎馬，象徵「旗開得勝」。`,},en:{title:`Agate snuff bottle carved with the scene of victory`,subtitle:`Qing dynasty, 18th-19th c.`,content:`Collaborate with the natural colouration of agate, the craving on the bottle in the depiction of a figure holding a flag on a horse, symbolizing “Victory at hand as the flag waves”.`,}},
+                infoF_13:{zh:{title:`元會境火王爺神明會錫製酒壺及酒杯組`,subtitle:`19世紀臺南市元會境火王爺神明會捐贈`,content:`府城嶽帝廟一帶元會境在清代形成了火王爺神明會的祭祀組織,距今約有150多年的歷史。據相關研究與普遍看法,府城內的各火王爺神明會,被認為是由法華寺內火神廟分香出去。圖為元會境祭祀火王爺用的酒壺與酒杯。`,},en:{title:`A tin wine pot and wine cup set from the Fire God of Yuanhuijing Association`,subtitle:`19th c.
+Donated by the Tainan City Fire God of Yuanhuijing Association`,content:`Used since the late Qing Dynasty, this set is dedicated to the Fire God of Yuanhuijing, who is the Nanji Emperor, and is enshrined in the Fire God Hall of Fahua Temple. According to research, incense was distributed from here to the various fire gods in Tainan.`,}},
+                infoF_14:{zh:{title:`泰雅族北勢群新娘禮服組
+`,subtitle:``,content:`野桐工坊與尤瑪˙達陸2009年根據臺博館藏品重新設計製作`,},en:{title:`Atayal Mepaynox(Peishih)
+goup bridal outfit set`,subtitle:``,content:`Reproduced from NTM's collection by the Lihang Studio and Yuma Taru in 2009`,}},
+                infoF_15:{zh:{title:`排灣族女子盛裝禮服組`,subtitle:``,content:`古琉坊製作(2014)；仿真熊鷹羽毛冠飾製作：鍾金男(2022)`,},en:{title:`Paiwan woman's formalwear`,subtitle:``,content:`By Gu-Liu Studio, 2014 / Headdress of artificial mountain hawk-eagle feathers by Chung, chin-nan, 2022`,}},
+                infoF_16:{zh:{title:`嵌珠寶翠玉花卉鈿子`,subtitle:`清 十九世紀`,content:`黑絲鈿子，是清代后妃出席祭祀或新君即位等吉慶場合所帶的帽子。視鈿花占鈿子總面積的比例，分滿鈿、七分鈿及半鈿，展出的半鈿屬寡婦或老嫗的帽子。`,},en:{title:`Headdress inlaid with pearl, jadeite, and gemstone in floral shapes`,subtitle:`Qing dynasty, 19th c`,content:`The headdress in black silk was a hat worn by empresses to attend auspicious occasions such as ceremonies or enthronements of emperors. There are the full, nearly-full, and half ornamented headdresses based on the number of jewels on the piece. The exhibited half ornamented headdress is a piece for widows or elderly ladies.`,}},
+                infoF_17_1:{zh:{title:`焦秉貞畫仕女圖　冊`,subtitle:`清 1644-1911`,content:`焦秉貞（17世紀），所畫人物、宮室，深受西方凹凸技法之影響，是康熙朝首位將西洋畫法融入中國畫的宮廷畫家。 描繪仕女於不同季節中，所展現的各種悠閒情態。背景建築，採用透視畫法，重視染暈，立體感十足。`,},en:{title:`Portrait of court ladies painted by Jiao Bingzhen
+Album`,subtitle:`Qing dynasty (1644-1911)`,content:`Jiao Bingzhen (17th century) painted figures and palaces under the prominent influence of the Western concave-and-convex paintings; Jiao was the first court painter to bring the Western technique into Chinese paintings during the Kangxi reign. The portraits depicted court ladies displaying various leisurely postures in different seasons. The architectural background adapted the aerial perspective and focused on the shading of colours to achieve a vivid sense of dimensions.`,}},
+                infoF_17:{zh:{title:`國朝名繪　冊　禹之鼎妝閣清暇圖`,subtitle:`清 1644-1911`,content:`禹之鼎(1647-1716後)。康熙二十年(1681年)官鴻臚寺序班，以畫供奉入直暢春園。畫人物以白描為主，人物秀媚古雅，此作設色雅緻，剪紙妝花為飾，仕女頭簪點翠，淡雅妝容，更顯秀美。`,},en:{title:`Prominent Paintings of the Nation
+Album
+‘Leisure in the dressing room’ painted by Yu Zhiding`,subtitle:`Qing dynasty (1644-1911)`,content:`Yu Zhiding (1647- later than 1716). In the 20th year of Kangxi reign (1681), the basic official of Honglu Temple presented the painting to assume the post in Changchun Garden. The depiction of figures embraced the line-tracing technique to capture their gorgeousness with sophisticated colouration; the ladies have face ornaments in paper cuts and hairpins with kingfisher feathers. The light makeup enhances their gracefulness.`,}},
+                infoF_18:{zh:{title:`美美特種行業招牌`,subtitle:`20世紀`,content:`20世紀末的新町，仍有真花園、美美、夜巴黎三家妓院。此為美美的招牌。`,},en:{title:`Character from the Meimei Brothel’s sign`,subtitle:`20th c.`,content:`At the end of the 20th century, the brothels Zhenhuayuan, Meimei, and Night in Paris were still in Xinding. This is a character from the sign of the Meimei Brothel.`,}},
+                infoF_19:{zh:{title:`真花園統計號碼箱`,subtitle:`1907-2009年`,content:`根據推測，使用方式可能是由消費者將票根投入小姐的編號箱中，小姐結束營業後根據票根領錢。`,},en:{title:`Wooden box to keep track of payment from the Zhenhuayuan Brothel`,subtitle:`1907-2009`,content:`It is believed that a customer inserted his ticket stubs into numbered box correlating to the woman he slept with. After work, the women were paid based on the quantity of ticket stubs they received.`,}},
+                infoF_19_1:{zh:{title:`清 西洋鍍金鑲畫琺瑯人物帶頭 四件一組`,subtitle:``,content:`歐洲進口鍍金鑲嵌男子腰帶帶頭，鑲嵌華麗。蓋內人物表情歡愉、瑰麗性感。秘戲畫的引入，為後宮帶來新的「慾望想像空間」。`,},en:{title:`Western gilt belt buckle decorated with figures in painted enamels (set of four)`,subtitle:`Qing dynasty (1644-1911)`,content:`The gilt belt buckle of men imported from Europe has glamorous jewel inlays. The buckle lid lifts to reveal the faces of figures expressing both pleasure and seduction. The introduction of these erotic paintings to the inner palace brought an innovative “imaginary space of desire”.`,}},
+                infoF_20:{zh:{title:`銅胎畫琺瑯洋人托寶幢`,subtitle:`清 十八世紀`,content:`「八吉祥」，八件一組，展出為其中三件。八吉祥是藏傳佛教祭祀的儀式用品，象徵吉祥。`,},en:{title:`Copper Western figurine holding a ceremonial staff in painted enamels`,subtitle:`Qing dynasty, 18th c.`,content:`The “Ba jixiang (eight auspicious symbols)” comes in a set of eight, and the exhibits are three of the collection. The “Ba Jixiang” is ritual paraphernalia for ceremonies of Tibetan Buddhism to represent propitious blessings.`,}},
+                infoF_21:{zh:{title:`清代寶藍絲緞盤金刺繡蟒袍`,subtitle:`清 十八世紀`,content:`此服屬於清末時期龍袍的紋飾特徵。傳為清光緒帝御賜予臺灣有功地方要員。`,},en:{title:`Official robe embroidered with gold on navy-blue silk`,subtitle:`Qing dynasty (1644-1911)`,content:`The features of this dragon robe's decoration belong to the late Qing Dynasty. It is said that the Emperor Guangxu of the Qing Dynasty bestowed meritorious local officials in Taiwan.`,}},
+                infoF_22:{zh:{title:`奏進番茉莉等物清單摺`,subtitle:`閩浙總督覺羅滿保清康熙朝 (1662-1722年)`,content:`康熙五十八年（1719），閩浙總督覺羅滿保（1673-1725）呈送地方貢禮與進貢清單一份，恭謹康熙皇帝覽閱。收到貢禮與清單後，康熙皇帝逐一在品項上批下評語，反映其個人評價。`,},en:{title:`Palace memorial on submitting manaca rain-tree, etc.`,subtitle:`Presented by Gioroi Mamboo, Governor-General of Fujian and Zhejiang
+Kangxi reign (1662-1722), Qing Dynasty`,content:`In the 58th year of Kangxi reign (1719), the Governor-general of the Minzhe region, Gioroi Mamboo (1673-1725), presented local offerings and an inventory list of tributes for Emperor Kangxi’s assessment. Upon receiving, Emperor Kangxi would comment on each item to give personal appraisals.`,}},
+            }, // title, subtitle, content
+            iframe:{
+                theme:{url:`https://temp.panosensing.com/nmth/entangledthings/beta/v0/vr/info/theme/theme_intro.html`,isFullScreen:true},
+                picture:{url:`https://temp.panosensing.com/nmth/entangledthings/beta/v0/vr/info/picture/kang_san_lau_picture.html`,isFullScreen:true},
+                bro:{url:`https://temp.panosensing.com/nmth/entangledthings/beta/v0/vr/info/brochure/kang_san_lau.html`,isFullScreen:true},
+                videoV1:{url:`https://temp.panosensing.com/nmth/entangledthings/beta/v0/vr/videoInfo/main.html?id=a`,isFullScreen:false},
+                videoV2:{url:`https://temp.panosensing.com/nmth/entangledthings/beta/v0/vr/videoInfo/main.html?id=b`,isFullScreen:false},
+                videoV3:{url:`https://temp.panosensing.com/nmth/entangledthings/beta/v0/vr/videoInfo/main.html?id=c`,isFullScreen:false},
+                videoV4:{url:`https://temp.panosensing.com/nmth/entangledthings/beta/v0/vr/videoInfo/main.html?id=d`,isFullScreen:false},
+            },
         },
     }
 }

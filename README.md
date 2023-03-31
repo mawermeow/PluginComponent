@@ -3,6 +3,17 @@
 ## 資料夾位置
 * `W:\nmth\entangledthings\beta\v0`
 
+## minimap
+= "{
+id:`"& D2 & "`,
+scene:`" & E2 & "`,
+sceneList:`" & F2 & "`,
+cx:`" & G2 & "`,
+cy:`" & H2 & "`,
+r:`" & I2 & "`},"
+
+= "{id:`"& D2 & "`,scene:`" & E2 & "`,sceneList:`" & F2 & "`,cx:`" & G2 & "`,cy:`" & H2 & "`,r:`" & I2 & "`},"
+
 ## B
 ```
 =if(len(G4)=10,"{title:{img:`"&G4&"`,imgHover:`"&H4&"`,imgSelect:`"&I4&"`,},items:[]},","{img:`"&G4&"`,imgHover:`"&H4&"`,goToScene:`"&L4&"`,sceneList:`"&K4&"`,imgSelect:`"&I4&"`,},")
@@ -50,14 +61,30 @@ content:`"&J2&"`
 
 ## F看這
 ```
-=SUBSTITUTE(D2&":{
-zh:{subtitle:`"&B2&"`,
-img:`"&D2&"`,
-content:`"&E2&"`},
-en:{subtitle:`"&C2&"`,
-img:`"&D2&"`,
-content:`"&F2&"`}
+=SUBSTITUTE(B2&":{
+zh:{
+title:`"&C2&"`,
+subtitle:`"&E2&"`,
+content:`"&G2&"`,
+},
+en:{
+title:`"&D2&"`,
+subtitle:`"&F2&"`,
+content:`"&H2&"`,
+}
 },","","")
+
+=SUBSTITUTE(B2&":{zh:{title:`"&C2&"`,subtitle:`"&E2&"`,content:`"&G2&"`,},en:{title:`"&D2&"`,subtitle:`"&F2&"`,content:`"&H2&"`,}},","","")
+```
+
+## iframe
+```
+= A2 &":{
+url:`" & B2 & "`,
+isFullScreen:" & if(C2="O","true","false") & "
+},"
+
+= A2 &":{url:`" & B2 & "`,isFullScreen:" & if(C2="O","true","false") & "},"
 ```
 
 ## krpano action

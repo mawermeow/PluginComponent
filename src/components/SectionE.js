@@ -29,7 +29,7 @@ const SectionE=({eventTitle})=>{
                     <div className={`${lang==='en'?'text-[#E8BB5A]':'text-white'}`}
                     >En</div>
                 </div>
-                <div className="absolute cursor-pointer left-20 h-10 w-10 bg-black transform group-hover:bg-[#8c352c] -skew-y-[45deg] -translate-y-5"></div>
+                <div className="absolute cursor-pointer left-20 h-10 w-10 bg-black group-hover:bg-[#8c352c] -skew-y-[45deg] -translate-y-5"></div>
             </div>
             <motion.div className="absolute top-1 right-1 w-6 text-white cursor-pointer"
                         whileHover={{scale:1.1}}
