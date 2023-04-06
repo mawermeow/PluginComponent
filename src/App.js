@@ -63,17 +63,38 @@ subscribe(proxyState.ui, ()=>{
         })
     }
 
-    const {krObjScene, frontEndRecordScene, krObjLookAt} = proxyState.ui
+
+    // 更新場景時執行
+    const {krObjScene, frontEndRecordScene, startOnlyOnceList} = proxyState.ui
+    const {sectionF}=proxyState.data
+
     if(krObjScene!==frontEndRecordScene){
         proxyState.ui.sectionC.visible = false
         proxyState.ui.sectionD.visible = false
         proxyState.ui.sectionE.visible = false
+        proxyState.ui.sectionF.visible = false
         proxyState.ui.sectionB.itemSelected = ""
 
         proxyState.ui.frontEndRecordScene = krObjScene
+
+        const resultKey = Object.keys(sectionF).find(key => sectionF[key].zh.bindScene.split(',').includes(krObjScene))
+        if(resultKey){
+            if(sectionF[resultKey].zh.isStartOnlyOnce){
+                if(!startOnlyOnceList.includes(resultKey)){
+                    proxyState.ui.eventText = `sectionF:${resultKey}`
+                    proxyState.ui.startOnlyOnceList = [...startOnlyOnceList, resultKey]
+                }else{
+                    proxyState.ui.sectionF.data = sectionF[resultKey]
+                }
+            }else{
+                proxyState.ui.eventText = `sectionF:${resultKey}`
+            }
+        }
     }
 
-    // const scenes = Object.values(data.sectionF).map(el => el.data.zh.scene)
+
+
+
 
 
 })

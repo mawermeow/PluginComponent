@@ -67,16 +67,18 @@ title:`"&C2&"`,
 subtitle:`"&E2&"`,
 content:`"&G2&"`,
 bindScene:`"&J2&"`,
+isStartOnlyOnce:"&IF(K2="O","true","false")&",
 },
 en:{
 title:`"&D2&"`,
 subtitle:`"&F2&"`,
 content:`"&H2&"`,
 bindScene:`"&J2&"`,
+isStartOnlyOnce:"&IF(K2="O","true","false")&",
 }
 },","","")
 
-=SUBSTITUTE(B2&":{zh:{title:`"&C2&"`,subtitle:`"&E2&"`,content:`"&G2&"`,bindScene:`"&J2&"`,},en:{title:`"&D2&"`,subtitle:`"&F2&"`,content:`"&H2&"`,bindScene:`"&J2&"`,}},","","")
+=SUBSTITUTE(B2&":{zh:{title:`"&C2&"`,subtitle:`"&E2&"`,content:`"&G2&"`,bindScene:`"&J2&"`,isStartOnlyOnce:"&IF(K2="O","true","false")&",},en:{title:`"&D2&"`,subtitle:`"&F2&"`,content:`"&H2&"`,bindScene:`"&J2&"`,isStartOnlyOnce:"&IF(K2="O","true","false")&",}},","","")
 ```
 
 ## iframe

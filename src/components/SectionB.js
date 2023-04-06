@@ -4,6 +4,7 @@ import {motion, AnimatePresence} from "framer-motion";
 import {windowSizeState} from "../utils/windowSize";
 import {useEffect, useRef, useState} from "react";
 import {changeScene} from "../utils/krpano";
+import delay from "../utils/delay";
 
 
 const SectionB=()=>{
@@ -54,15 +55,18 @@ const SectionB=()=>{
 export default SectionB
 
 const BigItem=({data})=>{
-    const {items, title} = data
+    const {items, title, callEventText} = data
     const {titleSelected, itemSelected} = useSnapshot(proxyState.ui.sectionB)
-    const updateSelectedTitle=(newTitle)=>{
+    const updateSelectedTitle=async (newTitle)=>{
         if(titleSelected===newTitle){
             proxyState.ui.sectionB.titleSelected = ""
         }else{
             proxyState.ui.sectionB.titleSelected = newTitle
         }
-
+        if (callEventText) {
+            await delay(100)
+            proxyState.ui.eventText = callEventText
+        }
     }
     const updateSelectedItem=(newItem)=>proxyState.ui.sectionB.itemSelected = newItem
     const titleIsSelected = titleSelected===title.img
@@ -102,15 +106,17 @@ const ImgButton=({imgData, isSelected, onClick})=>{
         }
     },[krObjScene])
 
-    return <motion.div className="relative mb-1 w-full cursor-pointer pointer-events-auto" onClick={()=> {
-        onClick(img.toString())
-        if(goToScene){
-            changeScene(goToScene)
-        }
-        if(callEventText){
-            proxyState.ui.eventText = callEventText
-        }
-    }}>
+    return <motion.div className="relative mb-1 w-full cursor-pointer pointer-events-auto"
+                       onClick={async () => {
+                           onClick(img.toString())
+                           if (goToScene) {
+                               changeScene(goToScene)
+                           }
+                           if (callEventText) {
+                               await delay(100)
+                               proxyState.ui.eventText = callEventText
+                           }
+                       }}>
         <div className="relative w-full group">
             <img className={`absolute w-full object-contain ${isInScene?"opacity-100":"opacity-0"}`} src={`./images/sectionB/${imgSelect}.png`}/>
             <img className={`absolute w-full object-contain ${!isInScene&&isSelected?"opacity-100":"opacity-0"}`} src={`./images/sectionB/${imgHover}.png`}/>

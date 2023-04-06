@@ -5,19 +5,11 @@ import {RxCrossCircled} from "react-icons/rx";
 import {useEffect} from "react";
 
 const SectionF=()=>{
-    const {lang,krObjScene} = useSnapshot(proxyState.ui)
+    const {lang} = useSnapshot(proxyState.ui)
     const {visible,data} = useSnapshot(proxyState.ui.sectionF)
     const onClose = ()=> proxyState.ui.sectionF.visible = false
-    const {sectionF}=useSnapshot(proxyState.data)
 
-    const {title, subtitle, content, bindScene} = data[lang]
-
-    useEffect(()=>{
-        if(krObjScene===bindScene){
-            const resultKey = Object.keys(sectionF).find(key => sectionF[key].zh.bindScene === bindScene)
-            proxyState.ui.eventText = `sectionF:${resultKey}`
-        }
-    },[krObjScene])
+    const {title, subtitle, content} = data[lang]
 
     return <AnimatePresence>{visible&&<motion.div
         className="absolute inset-0 flex items-center justify-end"
@@ -60,8 +52,7 @@ const SectionF=()=>{
                     {/*<div className="text-[20px] text-[#a3392e] font-bold w-full text-center border border-0 border-b-[1px] border-[#E8BB5A] mb-4 pb-4">{subtitle}</div>*/}
                     <div className="text-[16px] text-[#a3392e] font-bold w-full my-4 ">
                         ●
-                        <span className="mx-2">{data["zh"].title}</span>
-                        <span>{data["en"].title}</span>
+                        <span className="mx-2">{title}</span>
                     </div>
                     <div className="mt-4 font-sans whitespace-pre-line text-[#666464] font-bold text-[14px] leading-[30px]">{subtitle}</div>
                     <div className="mt-4 font-sans whitespace-pre-line text-[#666464] text-[14px] leading-[30px]">{content}</div>
