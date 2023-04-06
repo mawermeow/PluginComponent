@@ -2,10 +2,15 @@ import {useSnapshot} from "valtio";
 import {proxyState} from "../App";
 import {AnimatePresence, motion} from "framer-motion";
 import {RxCrossCircled} from "react-icons/rx";
+import {useEffect, useState} from "react";
 
 const IframePage=()=>{
     const {visible,data} = useSnapshot(proxyState.ui.iframe)
-    const onClose = ()=> proxyState.ui.iframe.visible = false
+    const {isPlayAudio,isPlayStorage}=useSnapshot(proxyState.ui)
+    const onClose = ()=> {
+        proxyState.ui.iframe.visible = false
+        proxyState.ui.isPlayAudio = isPlayStorage
+    }
 
     return <AnimatePresence>{visible&&<motion.div
         className="fixed inset-0 flex items-center justify-center z-[60]"

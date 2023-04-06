@@ -9,6 +9,7 @@ import {motion} from "framer-motion";
 import MiniMap from "./components/MiniMap";
 import IframePage from "./components/IframePage";
 import SectionF from "./components/SectionF";
+import AudioControl from "./components/AudioControl";
 
 export const proxyState = proxy(window.frontEnd.preState?window.frontEnd.preState:{})
 
@@ -50,7 +51,11 @@ subscribe(proxyState.ui, ()=>{
             } else if(eventId==='toggle'){
                 proxyState.ui[eventTitle].visible = !proxyState.ui[eventTitle].visible
                 proxyState.ui.eventText = ""
-            } else if(eventId==='hideMenu'){ // sectionB 的 event 只有這個
+            } else if(eventTitle==='music'){ // AudioController
+                if(eventId==='play'){proxyState.ui.isPlayAudio = true}
+                else if(eventId==='pause'){proxyState.ui.isPlayAudio = false}
+                proxyState.ui.eventText = ""
+            }else if(eventId==='hideMenu'){ // sectionB 的 event 只有這個
                 proxyState.ui.sectionB.isShowList = false
                 proxyState.ui.eventText = ""
             } else if(eventTitle!==''){ // C D E iframe
@@ -58,6 +63,10 @@ subscribe(proxyState.ui, ()=>{
                 proxyState.ui[eventTitle].visible = true
                 proxyState.ui.eventText = ""
                 mutexClose(eventTitle)
+                if(eventTitle==='iframe'){
+                    proxyState.ui.isPlayStorage = proxyState.ui.isPlayAudio
+                    proxyState.ui.isPlayAudio = false
+                }
             }
             await delay(100)
         })
@@ -114,6 +123,7 @@ function App() {
             <MiniMap eventTitle="miniMap"/>
             <IframePage/>
 
+            <AudioControl/>
         </div>
     );
 }

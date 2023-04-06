@@ -2,6 +2,7 @@
 
 ## 資料夾位置
 * `W:\nmth\entangledthings\beta\v0`
+* `W:\nmth\entangledthings\beta\v0\vr\images\intro`
 
 ## minimap
 = "{
