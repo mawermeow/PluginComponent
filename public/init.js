@@ -878,7 +878,7 @@ Album
                 infoF_21:{zh:{title:`清代寶藍絲緞盤金刺繡蟒袍`,subtitle:`清 十八世紀`,content:`此服屬於清末時期龍袍的紋飾特徵。傳為清光緒帝御賜予臺灣有功地方要員。`,},en:{title:`Official robe embroidered with gold on navy-blue silk`,subtitle:`Qing dynasty (1644-1911)`,content:`The features of this dragon robe's decoration belong to the late Qing Dynasty. It is said that the Emperor Guangxu of the Qing Dynasty bestowed meritorious local officials in Taiwan.`,}},
                 infoF_22:{zh:{title:`奏進番茉莉等物清單摺`,subtitle:`閩浙總督覺羅滿保清康熙朝 (1662-1722年)`,content:`康熙五十八年（1719），閩浙總督覺羅滿保（1673-1725）呈送地方貢禮與進貢清單一份，恭謹康熙皇帝覽閱。收到貢禮與清單後，康熙皇帝逐一在品項上批下評語，反映其個人評價。`,},en:{title:`Palace memorial on submitting manaca rain-tree, etc.`,subtitle:`Presented by Gioroi Mamboo, Governor-General of Fujian and Zhejiang
 Kangxi reign (1662-1722), Qing Dynasty`,content:`In the 58th year of Kangxi reign (1719), the Governor-general of the Minzhe region, Gioroi Mamboo (1673-1725), presented local offerings and an inventory list of tributes for Emperor Kangxi’s assessment. Upon receiving, Emperor Kangxi would comment on each item to give personal appraisals.`,}},
-            }, // title, subtitle, content
+            }, // title, subtitle, content, bindScene
             iframe:{
                 theme:{url:`https://temp.panosensing.com/nmth/entangledthings/beta/v0/vr/info/theme/theme_intro.html`,isFullScreen:true},
                 picture:{url:`https://temp.panosensing.com/nmth/entangledthings/beta/v0/vr/info/picture/kang_san_lau_picture.html`,isFullScreen:true},

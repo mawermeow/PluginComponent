@@ -139,7 +139,7 @@ const Dot=({el})=>{
     const {currentWidth}=useSnapshot(windowSizeState)
 
     useEffect(() => {
-        if (krObjScene===el.scene&&ref.current) {
+        if (isActive&&ref.current) {
             const rect = ref.current.getBoundingClientRect();
             proxyState.ui.miniMap.fovX = rect.x
             proxyState.ui.miniMap.fovY = rect.y

@@ -66,15 +66,17 @@ zh:{
 title:`"&C2&"`,
 subtitle:`"&E2&"`,
 content:`"&G2&"`,
+bindScene:`"&J2&"`,
 },
 en:{
 title:`"&D2&"`,
 subtitle:`"&F2&"`,
 content:`"&H2&"`,
+bindScene:`"&J2&"`,
 }
 },","","")
 
-=SUBSTITUTE(B2&":{zh:{title:`"&C2&"`,subtitle:`"&E2&"`,content:`"&G2&"`,},en:{title:`"&D2&"`,subtitle:`"&F2&"`,content:`"&H2&"`,}},","","")
+=SUBSTITUTE(B2&":{zh:{title:`"&C2&"`,subtitle:`"&E2&"`,content:`"&G2&"`,bindScene:`"&J2&"`,},en:{title:`"&D2&"`,subtitle:`"&F2&"`,content:`"&H2&"`,bindScene:`"&J2&"`,}},","","")
 ```
 
 ## iframe

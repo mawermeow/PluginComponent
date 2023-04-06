@@ -2,13 +2,22 @@ import {AnimatePresence, motion} from "framer-motion";
 import {useSnapshot} from "valtio";
 import {proxyState} from "../App";
 import {RxCrossCircled} from "react-icons/rx";
+import {useEffect} from "react";
 
 const SectionF=()=>{
-    const {lang} = useSnapshot(proxyState.ui)
+    const {lang,krObjScene} = useSnapshot(proxyState.ui)
     const {visible,data} = useSnapshot(proxyState.ui.sectionF)
     const onClose = ()=> proxyState.ui.sectionF.visible = false
+    const {sectionF}=useSnapshot(proxyState.data)
 
-    const {title, subtitle, content} = data[lang]
+    const {title, subtitle, content, bindScene} = data[lang]
+
+    useEffect(()=>{
+        if(krObjScene===bindScene){
+            const resultKey = Object.keys(sectionF).find(key => sectionF[key].zh.bindScene === bindScene)
+            proxyState.ui.eventText = `sectionF:${resultKey}`
+        }
+    },[krObjScene])
 
     return <AnimatePresence>{visible&&<motion.div
         className="absolute inset-0 flex items-center justify-end"

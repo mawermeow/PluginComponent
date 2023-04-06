@@ -2,11 +2,23 @@ import {AnimatePresence, motion} from "framer-motion";
 import {useSnapshot} from "valtio";
 import {proxyState} from "../App";
 import {RxCrossCircled} from "react-icons/rx";
+import {useEffect, useRef, useState} from "react";
+import {windowSizeState} from "../utils/windowSize";
 
 const SectionE=({eventTitle})=>{
     const {lang} = useSnapshot(proxyState.ui)
     const {visible,data} = useSnapshot(proxyState.ui[eventTitle])
     const onClose = ()=> proxyState.ui[eventTitle].visible = false
+    const {currentHeight}=useSnapshot(windowSizeState)
+    const titleRulerRef = useRef()
+    const [titleHeight,setTitleHeight] =useState('30vh')
+
+    useEffect(()=>{
+        if(titleRulerRef.current) {
+            setTitleHeight((currentHeight * 0.6) - 64 - titleRulerRef.current.offsetHeight)
+        }
+
+    },[titleRulerRef])
 
     const {subtitle, content, img} = data[lang]
 
@@ -17,9 +29,9 @@ const SectionE=({eventTitle})=>{
         exit={{opacity:0,translateX:300}}
         transition={{duration:0.5}}
     >
-        <div className="relative h-[50vh] w-72 sm:right-0 top-4 w-56 bg-black/70 tracking-widest overflow-hidden pointer-events-auto shadow-[10px_10px_30px_0px_rgba(0,0,0,0.3)]">
-            <div className="absolute w-full ">
-                <img className="w-full object-cover" src="./images/sectionE/bg.png"/>
+        <div className="relative h-[60vh] w-72 sm:right-0 top-4 w-56 bg-black/70 tracking-widest overflow-hidden pointer-events-auto shadow-[10px_10px_30px_0px_rgba(0,0,0,0.3)]">
+            <div className="absolute w-full h-full">
+                <img className="w-full h-full object-fill" src="./images/sectionE/bg.png"/>
             </div>
 
             <div className="group z-50 relative" onClick={()=>proxyState.ui.lang = lang==='zh'?'en':'zh'}>
@@ -41,18 +53,26 @@ const SectionE=({eventTitle})=>{
             </motion.div>
 
             <div className="w-full h-10"></div>
-            <div className="w-full h-[calc(100%-64px)] overflow-y-scroll hide-scroll relative">
-                <div className="px-4 z-10">
+            <div className="w-full h-[calc(100%-64px)] relative">
+                <div className="px-4 z-10 mb-1" ref={titleRulerRef}>
                     <div className="text-[20px] text-[#E8BB5A] font-bold w-full text-center border border-0 border-b-[1px] border-[#E8BB5A] mb-4 pb-4">{subtitle}</div>
 
                     {img&&<div className="w-full">
                         <img className="w-full" src={`./images/${eventTitle}/${img}.png`}/>
                     </div>}
-
-                    <div className="mt-4 font-sans whitespace-pre-line text-white text-[14px] leading-[30px]">{content}</div>
                 </div>
+
+                {/*可滾動區域*/}
+                <div className="mt-4 overflow-y-scroll hide-scroll h-full px-4 z-10"
+                     style={{height:titleHeight}}
+                >
+                    <div>
+                        <div className="font-sans whitespace-pre-line text-white text-[14px] leading-[30px]">{content}</div>
+                    </div>
+                </div>
+                <div className="w-full h-6"></div>
+
             </div>
-            <div className="w-full h-6"></div>
         </div>
     </motion.div>}</AnimatePresence>
 }
