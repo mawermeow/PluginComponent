@@ -79,20 +79,20 @@ const MiniMap=({eventTitle})=>{
             className={`bg-black/60 fixed inset-0 transition-opacity ${visible&&!md?"opacity-100 pointer-events-auto":"pointer-events-none opacity-0"}`}
             onClick={onClose}
         >
-
         </motion.div>
         <AnimatePresence>{visible&&<motion.div
-        className="fixed inset-0 flex items-center justify-start md:justify-center"
-        initial={{opacity:0}}
-        animate={{opacity:1}}
-        exit={{opacity:0}}
-        drag={700 > currentWidth ? "x" : false}
-        dragConstraints={{
-            left:currentWidth-700-32,
-            right:0,
-        }}
-    >
+            className="fixed inset-0 flex items-center justify-start md:justify-center"
+            initial={{opacity:0}}
+            animate={{opacity:1}}
+            exit={{opacity:0}}
+            drag={700 > currentWidth ? "x" : false}
+            dragConstraints={{
+                left:currentWidth-700-32,
+                right:0,
+            }}
+        >
         <div className={`absolute p-4 bg-black/75 rounded-xl`}>
+            <div className="md:hidden absolute top-4 left-10 pointer-events-none"><img src="./images/map_tip.png"/></div>
             {md&&<motion.div className="absolute top-2 right-1 w-6 text-white cursor-pointer z-10 pointer-events-auto"
                              whileHover={{scale:1.1}}
                              whileTap={{scale:0.9}}

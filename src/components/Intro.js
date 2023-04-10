@@ -39,15 +39,15 @@ const Intro=()=>{
     },[])
 
     const controlKrpano=async ()=>{
-        await screenDrag()
-        if(!isShowIntro)return
-        await delay(1000)
-        setShowTeachOne(false)
-        await mouseScroll()
-        if(!isShowIntro)return
-        await delay(1000)
-        setTeached(true)
-        setIsTeaching(false)
+        if(md) {
+            await screenDrag()
+            await delay(1000)
+            setShowTeachOne(false)
+            await mouseScroll()
+            await delay(1000)
+            setTeached(true)
+            setIsTeaching(false)
+        }
     }
     useEffect(()=>{
         if(isTeaching){

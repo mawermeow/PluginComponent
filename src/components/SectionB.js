@@ -62,7 +62,13 @@ const BigItem=({data})=>{
     const updateSelectedTitle=async (newTitle)=>{
         if(titleSelected===newTitle){
             proxyState.ui.sectionB.titleSelected = ""
+        }else if(titleSelected===""){
+            scrollToId(`sidebar_${title.img}`)
+            proxyState.ui.sectionB.titleSelected = newTitle
         }else{
+            proxyState.ui.sectionB.titleSelected = ""
+            await delay(500)
+            scrollToId(`sidebar_${title.img}`)
             proxyState.ui.sectionB.titleSelected = newTitle
         }
         if (callEventText) {
@@ -111,7 +117,6 @@ const ImgButton=({imgData, isSelected, onClick})=>{
     return <motion.div className="relative mb-1 w-full cursor-pointer pointer-events-auto"
                        onClick={async () => {
                            onClick(img.toString())
-                           scrollToId(`sidebar_${img}`)
                            if (goToScene) {
                                changeScene(goToScene)
                            }

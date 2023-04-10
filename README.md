@@ -97,3 +97,10 @@ isFullScreen:" & if(C2="O","true","false") & "
 
 ## 連結
 * [GoogleSheet](https://docs.google.com/spreadsheets/d/1AUjGNWYARrjEZL7uP_UVpAVlXV5QJAAlPf_s5r9RdiM/edit#gid=1060741455)
+
+
+webvr_onavailable=""
+webvr_onunavailable=""
+webvr_onunknowndevice=""
+webvr_onentervr=""
+webvr_onexitvr=""

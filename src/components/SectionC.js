@@ -17,7 +17,7 @@ const SectionC=({eventTitle})=>{
         exit={{opacity:0,translateX:300}}
         transition={{duration:0.5}}
     >
-        <div className="relative h-[65vh] w-full sm:w-[340px] right-0 top-0 tracking-widest overflow-hidden pointer-events-auto">
+        <div className="relative h-full sm:h-[65vh] w-full sm:w-[340px] right-0 top-0 tracking-widest overflow-hidden pointer-events-auto">
             <motion.div className="absolute top-2 right-1 w-6 text-white cursor-pointer z-10"
                         whileHover={{scale:1.1}}
                         whileTap={{scale:0.9}}

@@ -12,7 +12,7 @@ window.frontEnd = {
             isPlayAudio:true,
             isPlayStorage:false,
             frontEndRecordScene: 'pano182',
-            miniMap: {visible: false, fovX: 0, fovY: 0, dotWidth: 0},
+            miniMap: {visible: true, fovX: 0, fovY: 0, dotWidth: 0},
             sectionB: {visible: true, titleSelected: '', itemSelected: '', isShowList: true},
             sectionC: {visible: false, data: {zh: {}, en: {}}},
             sectionD: {visible: false, data: {zh: {}, en: {}}},
