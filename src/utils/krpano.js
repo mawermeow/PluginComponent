@@ -1,3 +1,5 @@
+import {proxyState} from "../App";
+
 export const changeScene=(scene)=>{
     const krpano = document.getElementById("krpanoSWFObject")
     if(krpano){
@@ -17,12 +19,13 @@ export const mouseScroll=async ()=>{
     if(krpano){
         const krpanoObj = krpano.get("global")
         const fov = krpanoObj.get("view.fov");
+
+        if(!proxyState.ui.isShowIntro)return
         krpanoObj.call(`tween(view.fov, ${fov-20}, 0.8);`)
         await delay(800)
+        if(!proxyState.ui.isShowIntro)return
         krpanoObj.call(`tween(view.fov, ${fov}, 0.8);`)
     }
-
-
 }
 
 export const screenDrag=async ()=>{
@@ -31,10 +34,14 @@ export const screenDrag=async ()=>{
     if(krpano){
         const krpanoObj = krpano.get("global")
         const hlookat = krpanoObj.get("view.hlookat");
+
+        if(!proxyState.ui.isShowIntro)return
         krpanoObj.call(`tween(view.hlookat,${hlookat+15}, 0.5);`)
         await delay(500)
+        if(!proxyState.ui.isShowIntro)return
         krpanoObj.call(`tween(view.hlookat,${hlookat-15}, 0.8);`)
         await delay(800)
+        if(!proxyState.ui.isShowIntro)return
         krpanoObj.call(`tween(view.hlookat,${hlookat}, 0.5);`)
     }
 

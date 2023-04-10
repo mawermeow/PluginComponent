@@ -4,9 +4,10 @@ import {useEffect, useRef, useState} from "react";
 import {mouseScroll, screenDrag} from "../utils/krpano";
 import delay from "../utils/delay";
 import {proxyState} from "../App";
+import {motion,AnimatePresence} from "framer-motion";
 
 const Intro=()=>{
-    const {isPlayAudio}=useSnapshot(proxyState.ui)
+    const {isPlayAudio,isShowIntro}=useSnapshot(proxyState.ui)
     const audioRef = useRef(null);
     const [isClicked,setIsClicked]=useState(false)
     const [isLoaded,setIsLoaded]=useState(false)
@@ -31,7 +32,6 @@ const Intro=()=>{
     const [isTeaching,setIsTeaching]=useState(true)
     const [teached,setTeached]=useState(false)
     const [showTeachOne,setShowTeachOne]=useState(true)
-    const [isShowIntro,setIsShowIntro]=useState(true)
 
 
     useEffect(()=>{
@@ -40,58 +40,77 @@ const Intro=()=>{
 
     const controlKrpano=async ()=>{
         await screenDrag()
+        if(!isShowIntro)return
         await delay(1000)
         setShowTeachOne(false)
         await mouseScroll()
+        if(!isShowIntro)return
         await delay(1000)
         setTeached(true)
         setIsTeaching(false)
     }
     useEffect(()=>{
         if(isTeaching){
+            const frontMask = document.getElementById('frontMask')
+            if(frontMask){
+                frontMask.parentNode.removeChild(frontMask)
+            }
             controlKrpano()
         }
     },[])
 
-
-    if(md&&!teached){
-        return <div className="fixed inset-0 flex items-center justify-center pointer-events-auto bg-black/60">
-            <div className="max-w-[500px] h-max relative">
-                <img className={`absolute w-full object-contain ${showTeachOne?'opacity-100':'opacity-0'}`} src="./images/intro/intro1.png"/>
-                <img className={`w-full object-contain ${!showTeachOne?'opacity-100':'opacity-0'}`} src="./images/intro/intro2.png"/>
-                <div className="absolute w-[120px] z-50 top-0 right-11 group cursor-pointer"
+    return <>
+        <AnimatePresence>{isShowIntro&&<motion.div
+            className="fixed inset-0 bg-black/60"
+            initial={{opacity:1}}
+            animate={{opacity:1}}
+            exit={{opacity:0}}
+        />}</AnimatePresence>
+        <AnimatePresence>
+            {(!md||teached)&&isShowIntro&&<motion.div
+                className={`fixed inset-0 flex items-center justify-center pointer-events-auto`}
+                initial={{opacity:0}}
+                animate={{opacity:1}}
+                exit={{opacity:0}}
+            >
+                <div className={`max-w-[500px] h-max relative group cursor-pointer`}
                      onClick={()=>{
-                         setTeached(true)
-                         setIsTeaching(false)
+                         proxyState.ui.isShowIntro = false
+                         playAudio()
                      }}
                 >
-                    <img className="absolute w-full object-contain group-hover:opacity-0" src="./images/intro/skip.png"/>
-                    <img className="w-full object-contain opacity-0 group-hover:opacity-100" src="./images/intro/skip_h.png"/>
+                    <img className="select-none absolute w-full object-contain group-hover:opacity-0" src="./images/intro/start.png"/>
+                    <img className="select-none w-full object-contain opacity-0 group-hover:opacity-100" src="./images/intro/start_h.png"/>
                 </div>
-            </div>
-
-            {/*<div className="md:min-w-[700px] h-max relative">*/}
-            {/*    <img className="w-full object-contain" src="./images/intro/intro2.png"/>*/}
-            {/*</div>*/}
-        </div>
-    }
-
-    return <>
-        <div className={`fixed inset-0 flex items-center justify-center bg-black/60 ${isShowIntro?'opacity-100 pointer-events-auto':'opacity-0 pointer-events-none'}`}>
-            <div className={`max-w-[500px] h-max relative group cursor-pointer ${isShowIntro?'pointer-events-auto':'pointer-events-none'}`}
-                 onClick={()=>{
-                     setIsShowIntro(false)
-                     playAudio()
-                 }}
+            </motion.div>}
+        </AnimatePresence>
+        <AnimatePresence>
+            {(md&&!teached)&&isShowIntro&&<motion.div
+                className="fixed inset-0 flex items-center justify-center pointer-events-auto"
+                initial={{opacity:0}}
+                animate={{opacity:1}}
+                exit={{opacity:0}}
             >
-                <img className="absolute w-full object-contain group-hover:opacity-0" src="./images/intro/start.png"/>
-                <img className="w-full object-contain opacity-0 group-hover:opacity-100" src="./images/intro/start_h.png"/>
-            </div>
+                <div className="max-w-[500px] h-max relative">
+                    <img className={`select-none absolute w-full object-contain ${showTeachOne?'opacity-100':'opacity-0'}`} src="./images/intro/intro1.png"/>
+                    <img className={`select-none w-full object-contain ${!showTeachOne?'opacity-100':'opacity-0'}`} src="./images/intro/intro2.png"/>
+                    {/*skip*/}
+                    <div className="absolute w-[120px] z-50 top-0 right-11 group cursor-pointer"
+                        onClick={()=>{
+                            setTeached(true)
+                            setIsTeaching(false)
+                            proxyState.ui.isShowIntro = false
+                            playAudio()
+                        }}
+                    >
+                        <img className="select-none absolute w-full object-contain group-hover:opacity-0" src="./images/intro/skip.png"/>
+                        <img className="select-none w-full object-contain opacity-0 group-hover:opacity-100" src="./images/intro/skip_h.png"/>
+                    </div>
+                </div>
+                </motion.div>
+            }
+        </AnimatePresence>
 
-            {/*<div className="md:min-w-[700px] h-max relative">*/}
-            {/*    <img className="w-full object-contain" src="./images/intro/intro2.png"/>*/}
-            {/*</div>*/}
-        </div>
         <audio
             onLoadedData={()=>setIsLoaded(true)}
             loop

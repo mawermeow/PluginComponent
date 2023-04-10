@@ -5,6 +5,7 @@ import {windowSizeState} from "../utils/windowSize";
 import {useEffect, useRef, useState} from "react";
 import {changeScene} from "../utils/krpano";
 import delay from "../utils/delay";
+import scrollToId from "../utils/scrollToId";
 
 
 const SectionB=()=>{
@@ -50,6 +51,7 @@ const SectionB=()=>{
                 {sectionB.map(el=><BigItem key={`BigItem${el.title.img}`} data={el}/>)}
             </div>
         </motion.div>
+        <div className="h-16 w-60 md:hidden"></div>
     </motion.div>}</AnimatePresence>
 }
 export default SectionB
@@ -74,7 +76,7 @@ const BigItem=({data})=>{
         return accumulator + currentValue.sceneList + ","
     }, "");
 
-    return <div className="w-60 mb-1">
+    return <div id={`sidebar_${title.img}`} className="w-60 mb-1">
         <ImgButton imgData={
             title.img==="sidebar_B0"
             ?{...title}
@@ -92,7 +94,7 @@ const BigItem=({data})=>{
 }
 
 const ImgButton=({imgData, isSelected, onClick})=>{
-    const {img, imgHover, imgSelect, goToScene, callEventText} = imgData
+    const {img, imgHover, imgSelect, goToScene, callEventText,title} = imgData
     const {krObjScene} = useSnapshot(proxyState.ui)
     const sceneList = imgData.sceneList?imgData.sceneList.split(','):[]
     const [isInScene,setIsInScene]=useState(false)
@@ -109,6 +111,7 @@ const ImgButton=({imgData, isSelected, onClick})=>{
     return <motion.div className="relative mb-1 w-full cursor-pointer pointer-events-auto"
                        onClick={async () => {
                            onClick(img.toString())
+                           scrollToId(`sidebar_${img}`)
                            if (goToScene) {
                                changeScene(goToScene)
                            }

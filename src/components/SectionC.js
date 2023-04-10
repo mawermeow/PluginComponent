@@ -61,12 +61,12 @@ const SectionC=({eventTitle})=>{
             </div>
 
 
-            <div className="w-full h-full bg-black/75 shadow-[inset_0_25px_60px_-15px_rgba(0,0,0,1)]">
-                <div className="w-full h-[calc(100%-148px)] overflow-y-scroll hide-scroll relative">
+            <div className="w-full h-[calc(100%-48px)] bg-black/75 shadow-[inset_0_25px_60px_-15px_rgba(0,0,0,1)]">
+                <div className="w-full h-[calc(100%-24px)] overflow-y-scroll hide-scroll relative">
                     <div className="z-10 text-white text-2xl font-bold pt-4 pl-8">
                         {title}
                     </div>
-                    <div className="w-[calc(100%-64)] mx-8 border border-0 border-b-[1px] border-white mb-4 pb-4"></div>
+                    <div className="w-[calc(100%-64px)] mx-8 border border-0 border-b-[1px] border-white mb-4 pb-4"></div>
 
                     <div className="w-full px-8 py-1 text-[#E8BB5A] font-bold text-[1.25rem]">
                         ■ {subtitle}

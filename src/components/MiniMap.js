@@ -136,7 +136,7 @@ const Dot=({el})=>{
     const {krObjScene, krObjFov}=useSnapshot(proxyState.ui)
     const isActive = [el.scene,...el.sceneList.split(',')].includes(krObjScene)
     const ref = useRef()
-    const {currentWidth}=useSnapshot(windowSizeState)
+    const {currentWidth,md}=useSnapshot(windowSizeState)
 
     useEffect(() => {
         if (isActive&&ref.current) {
@@ -153,6 +153,9 @@ const Dot=({el})=>{
             whileHover={{scale:1.2}}
             stroke="white" strokeWidth={isActive?"1":"0"}
                 fill={isActive?"#a3392e":"#e8bb5a"} ref={ref}
-                onClick={()=>{changeScene(el.scene)}} cx={el.cx} cy={el.cy} r={el.r}/>
+                onClick={()=>{
+                    changeScene(el.scene)
+                    if(!md){proxyState.ui.miniMap.visible = false}
+                }} cx={el.cx} cy={el.cy} r={el.r}/>
     </>
 }

@@ -8,6 +8,7 @@ window.frontEnd = {
             krObjScene: 'pano182',
             krObjLookAt: 0,
             krObjFov: 80,
+            isShowIntro:true,
             isPlayAudio:true,
             isPlayStorage:false,
             frontEndRecordScene: 'pano182',
