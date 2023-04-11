@@ -1,5 +1,12 @@
 # ptp_front_page
 
+![](https://ptuml.hackmd.io/svg/SoWkIImgAStDuUAApYugICpBZmMoYb8JaqjYyfvszZvVlVxvrfOdkxV5AYGMAu35WVBbcNaf-ULwGBqbgM09C0ieaPcNMQANLGmM0x6vk226AkZgsa5qArYzREn-iR272oIjeATd1z6hOFLqxOodhKkVTinzkhpxQSCUBeYm3KW5LEEBTGrF-wV1LJpPiUpvbFdFEYOK5ELNLCRaFLkmyzdaMS-x6vwrTZ-RilF5kgwN2zS_NxBhQUlof-jsmXo2P2DKmvGLppgsFPlS-sJl7A2NcpO_RT-LMfQQ1tIxGsfU2YXe0000)
+
+state 為代理，負責儲存與管理狀態資料，並在使用者操作時更新狀態，從而將 krpano 和 react 解耦，實現對狀態的代理控制。
+
+其中 krpano 為 Model，負責處理使用者操作事件並更新狀態；react 為 View，負責顯示介面；state 為 Controller，負責管理狀態，並與 Model 和 View 進行交互。
+
+
 ## 資料夾位置
 * `W:\nmth\entangledthings\beta\v0`
 * `W:\nmth\entangledthings\beta\v0\vr\images\intro`
@@ -97,10 +104,3 @@ isFullScreen:" & if(C2="O","true","false") & "
 
 ## 連結
 * [GoogleSheet](https://docs.google.com/spreadsheets/d/1AUjGNWYARrjEZL7uP_UVpAVlXV5QJAAlPf_s5r9RdiM/edit#gid=1060741455)
-
-
-webvr_onavailable=""
-webvr_onunavailable=""
-webvr_onunknowndevice=""
-webvr_onentervr=""
-webvr_onexitvr=""
