@@ -12,13 +12,14 @@ window.frontEnd = {
             isPlayAudio:true,
             isPlayStorage:false,
             frontEndRecordScene: 'pano182',
-            miniMap: {visible: true, fovX: 0, fovY: 0, dotWidth: 0},
+            miniMap: {visible: false, fovX: 0, fovY: 0, dotWidth: 0},
             sectionB: {visible: true, titleSelected: '', itemSelected: '', isShowList: true},
             sectionC: {visible: false, data: {zh: {}, en: {}}},
             sectionD: {visible: false, data: {zh: {}, en: {}}},
             sectionE: {visible: false, data: {zh: {}, en: {}}},
             sectionF: {visible: false, data: {zh: {}, en: {}}},
             iframe: {visible: false, data: {url: '', isFullScreen: false}},
+            r18: {visible:false, alreadyOpened:false}
         },
         data: {
             sectionB:[
@@ -50,7 +51,7 @@ window.frontEnd = {
                         {img:`sidebar_B4_5`,imgHover:`sidebar_B4_5_h`,goToScene:`pano11`,sceneList:`pano11,pano4904`,imgSelect:`sidebar_B4_5_h2`,callEventText:`sectionD:infoD_20`},
                     ]},
                 {title:{img:`sidebar_B5`,imgHover:`sidebar_B5_h`,imgSelect:`sidebar_B5_h2`,},items:[
-                        {img:`sidebar_B5_1`,imgHover:`sidebar_B5_1_h`,goToScene:`pano194`,sceneList:`pano199,pano194,pano651`,imgSelect:`sidebar_B5_1_h2`,callEventText:`sectionC:infoC_07`},
+                        {img:`sidebar_B5_1`,imgHover:`sidebar_B5_1_h`,goToScene:`pano194`,sceneList:`pano199,pano194,pano651,pano16632`,imgSelect:`sidebar_B5_1_h2`,callEventText:`sectionC:infoC_07`},
                         {img:`sidebar_B5_2`,imgHover:`sidebar_B5_2_h`,goToScene:`pano200`,sceneList:`pano200`,imgSelect:`sidebar_B5_2_h2`,callEventText:`sectionD:infoD_22`},
                         {img:`sidebar_B5_4`,imgHover:`sidebar_B5_4_h`,goToScene:`pano650`,sceneList:`pano650`,imgSelect:`sidebar_B5_4_h2`,callEventText:`sectionD:infoD_23`},
                     ]},

@@ -11,6 +11,7 @@ import IframePage from "./components/IframePage";
 import SectionF from "./components/SectionF";
 import AudioControl from "./components/AudioControl";
 import Intro from "./components/Intro";
+import R18 from "./components/R18";
 
 export const proxyState = proxy(window.frontEnd.preState?window.frontEnd.preState:{})
 
@@ -122,6 +123,7 @@ function App() {
             <SectionF/>
 
             <MiniMap eventTitle="miniMap"/>
+            <R18/>
             <IframePage/>
 
             {/*<AudioControl/>*/}

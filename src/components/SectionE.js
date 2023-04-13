@@ -53,9 +53,11 @@ const SectionE=({eventTitle})=>{
                 </div>
 
                 {/*可滾動區域*/}
-                <div className="my-4 overflow-y-scroll hide-scroll h-[30vh] px-4 z-10">
+                <div className="my-4 overflow-y-scroll scroll-gray h-[30vh] pl-4 mr-4 z-10">
                     <div>
-                        <div className="font-sans whitespace-pre-line text-white text-[14px] leading-[30px]">{content}</div>
+                        <div className="font-sans whitespace-pre-line text-white text-[14px] leading-[30px]">
+                            {content}
+                        </div>
                     </div>
                 </div>
 

@@ -37,16 +37,14 @@ code {
     -webkit-appearance: none;
     display: none;
   }
-
   .scroll-gray::-webkit-scrollbar{
     width: 2px;
   }
   .scroll-gray::-webkit-scrollbar-thumb{
     border-radius: 4px;
-    background-color: rgba(255, 255, 255, 0.4);
+    background-color: rgba(232,187,90,0.8);
   }
   .scroll-gray::-webkit-scrollbar-track-piece{
     background: transparent;
   }
-
 }
