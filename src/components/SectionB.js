@@ -100,7 +100,7 @@ const BigItem=({data})=>{
 }
 
 const ImgButton=({imgData, isSelected, onClick})=>{
-    const {img, imgHover, imgSelect, goToScene, callEventText,title} = imgData
+    const {img, imgHover, imgSelect, goToScene, callEventText,title,lookAtHotspot} = imgData
     const {krObjScene} = useSnapshot(proxyState.ui)
     const sceneList = imgData.sceneList?imgData.sceneList.split(','):[]
     const [isInScene,setIsInScene]=useState(false)
@@ -118,7 +118,11 @@ const ImgButton=({imgData, isSelected, onClick})=>{
                        onClick={async () => {
                            onClick(img.toString())
                            if (goToScene) {
-                               changeScene(goToScene)
+                               if(lookAtHotspot){
+                                   changeScene(goToScene)
+                               }else{
+                                   changeScene(goToScene)
+                               }
                            }
                            if (callEventText) {
                                await delay(100)

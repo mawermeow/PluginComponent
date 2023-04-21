@@ -47,12 +47,14 @@ const R18=()=>{
                          setIsOver18TearsOld(false)
                          onClose()
                          await delay(100)
-                         changeScene("pano16632")
+                         if(krObjScene!=="pano23973"){
+                             changeScene("pano23973")
+                         }
                      }}
                 >
                     <div>
                         <div>我未滿18歲</div>
-                        <div>I am over 18.</div>
+                        <div>I am under 18.</div>
                     </div>
                 </div>
             </div>

@@ -13,13 +13,13 @@ const IframePage=()=>{
     }
 
     return <AnimatePresence>{visible&&<motion.div
-        className="fixed inset-0 flex items-center justify-center z-[60]"
+        className="fixed inset-0 flex items-center justify-center z-[60] pointer-events-auto"
         initial={{opacity:0}}
         animate={{opacity:1}}
         exit={{opacity:0}}
     >
         <div className="bg-black/75 absolute inset-0"></div>
-        <motion.div className="fixed top-1 right-1 w-6 text-white cursor-pointer z-[70] pointer-events-auto"
+        <motion.div className="fixed top-1 right-1 w-8 text-white cursor-pointer z-[70] pointer-events-auto"
                     whileHover={{scale:1.1}}
                     whileTap={{scale:0.9}}
                     onClick={onClose}

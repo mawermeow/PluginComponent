@@ -60,7 +60,10 @@ subscribe(proxyState.ui, ()=>{
             }else if(eventId==='hideMenu'){ // sectionB 的 event 只有這個
                 proxyState.ui.sectionB.isShowList = false
                 proxyState.ui.eventText = ""
-            } else if(eventTitle!==''){ // C D E iframe
+            } else if(eventTitle==='href'){ // 連結內部網頁
+                window.location.href = eventId
+                proxyState.ui.eventText = ""
+            }else if(eventTitle!==''){ // C D E iframe
                 proxyState.ui[eventTitle].data = data[eventTitle][eventId]
                 proxyState.ui[eventTitle].visible = true
                 proxyState.ui.eventText = ""
@@ -102,12 +105,6 @@ subscribe(proxyState.ui, ()=>{
             }
         }
     }
-
-
-
-
-
-
 })
 
 function App() {
